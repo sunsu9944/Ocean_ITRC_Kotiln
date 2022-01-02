@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#121827">
+
+
+    <TextView
+        android:id="@+id/titleBar_title_textView"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="해양 IT 융합기술연구소"
+        android:textColor="@color/white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        ></TextView>
+
+    <Button
+        android:id="@+id/titleBar_Login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="#00000000"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:text="Login"></Button>
+
+
+
+
+
+</RelativeLayout>
