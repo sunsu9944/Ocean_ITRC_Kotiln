@@ -1,28 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="50dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#121827">
 
 
     <TextView
         android:id="@+id/titleBar_title_textView"
-        android:layout_centerInParent="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="해양 IT 융합기술연구소"
+        android:text="Ocean- IT"
         android:textColor="@color/white"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp"
         ></TextView>
 
-    <Button
-        android:id="@+id/titleBar_Login_button"
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:backgroundTint="#00000000"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:text="Login"></Button>
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal">
+
+
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="#00000000"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_menu_search"
+                app:tint="@color/white"></ImageButton>
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:fontFamily="@font/nanummyeongjo"
+            android:text="한국어 / English"
+            android:textColor="#CCFFFFFF"
+            android:textSize="5pt"></Button>
+
+
+    </LinearLayout>
 
 
 

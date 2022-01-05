@@ -36,6 +36,8 @@ class ViewpagerFragment : Fragment() {
         pagerAdapter.addFragment(research_people())
         pagerAdapter.addFragment(research_result())
         pagerAdapter.addFragment(research_continue())
+        pagerAdapter.addFragment(black_board())
+        pagerAdapter.addFragment(user_info())
 
         viewPager.adapter = pagerAdapter
 
@@ -53,15 +55,23 @@ class ViewpagerFragment : Fragment() {
                 }
 
                 1 -> {
-                    tab.text = "연구 인원"
+                    tab.text = "연구인원"
                 }
 
                 2 -> {
-                    tab.text = "연구 성과"
+                    tab.text = "연구성과"
                 }
 
                 3 -> {
-                    tab.text = "연구 과제"
+                    tab.text = "연구과제"
+                }
+
+                4 -> {
+                    tab.text = "게시판"
+                }
+
+                5 -> {
+                    tab.text = "사람"
                 }
             }
         }.attach()
