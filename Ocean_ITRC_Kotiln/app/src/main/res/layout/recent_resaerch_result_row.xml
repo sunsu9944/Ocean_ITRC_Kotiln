@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/recent_count_row"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/recent_name_row"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        android:layout_marginStart="40dp"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:text="111"
+        android:textColor="@color/black"
+        android:textSize="6pt"
+        android:fontFamily="@font/nanummyeongjobold"
+        />
+
+    <TextView
+        android:id="@+id/recent_name_row"
+        app:layout_constraintStart_toEndOf="@id/recent_count_row"
+        app:layout_constraintEnd_toStartOf="@id/recent_date_row"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:lines="2"
+        android:text="논문 명입니다. 어느 정도 길어져도 대응이 가능하게 설계 되었 습니다."
+        android:textColor="@color/black"
+        android:textSize="5pt"
+        android:fontFamily="@font/nanummyeongjobold"/>
+
+    <TextView
+        app:layout_constraintStart_toEndOf="@id/recent_name_row"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/recent_count_row"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        android:id="@+id/recent_date_row"
+        android:layout_marginEnd="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2020.08.01"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="6pt"
+        android:fontFamily="@font/nanummyeongjobold"
+        />
+
+    <View
+        android:id="@+id/recent_result_saperlate"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintVertical_bias="1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#BFBFBF"
+        ></View>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
