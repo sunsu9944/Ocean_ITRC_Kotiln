@@ -139,6 +139,141 @@
                 android:layout_height="260dp"
                 />
 
+            <View
+                android:id="@+id/finish_saperlate_view"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@id/recent_result_list"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"/>
+
+            <TextView
+                android:id="@+id/recent_continue_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="최신 연구과제"
+                android:textColor="@color/black"
+                android:textSize="10pt"
+                android:fontFamily="@font/nanummyeongjoextrabold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintTop_toBottomOf="@id/finish_saperlate_view" />
+
+            <Button
+                android:id="@+id/recent_continue_button_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:text="더 보기"
+                android:fontFamily="@font/nanummyeongjobold"
+                android:textColor="@color/teal_700"
+                android:textSize="8pt"
+                app:layout_constraintBaseline_toBaselineOf="@id/recent_continue_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintStart_toEndOf="@id/recent_result_title"
+                app:layout_constraintTop_toBottomOf="@id/titlebar_layout"
+                />
+
+            <View
+                android:id="@+id/recent_continue_first_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/recent_continue_title" />
+
+            <TextView
+                android:id="@+id/continue_count"
+                app:layout_constraintTop_toBottomOf="@id/recent_continue_first_line"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/continue_name"
+                app:layout_constraintVertical_bias="0"
+                android:layout_marginTop="10dp"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                android:layout_marginStart="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="순번"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="8pt"
+
+                />
+
+            <TextView
+                android:id="@+id/continue_name"
+                app:layout_constraintTop_toTopOf="@+id/continue_count"
+                app:layout_constraintStart_toEndOf="@+id/continue_count"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintEnd_toStartOf="@id/continue_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="논문명"
+                android:textColor="@color/black"
+                android:textSize="8pt"/>
+
+            <TextView
+                app:layout_constraintTop_toTopOf="@id/continue_count"
+                app:layout_constraintStart_toEndOf="@+id/continue_name"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="40dp"
+                android:id="@+id/continue_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="발표일자"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:textSize="8pt"/>
+
+            <View
+                android:id="@+id/recent_continue_sccond_line"
+                app:layout_constraintTop_toBottomOf="@+id/continue_count"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                />
+
+            <ListView
+                android:id="@+id/recent_continue_list"
+                app:layout_constraintTop_toBottomOf="@+id/recent_continue_sccond_line"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                />
+
+            <View
+                android:id="@+id/final_view"
+                android:layout_marginTop="50dp"
+                app:layout_constraintTop_toBottomOf="@id/recent_continue_list"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"></View>
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/final_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ocean_IT Provider by Twogudack"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nanummyeongjoextrabold"
+                />
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

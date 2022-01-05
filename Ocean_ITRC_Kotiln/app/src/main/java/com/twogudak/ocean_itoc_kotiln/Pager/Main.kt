@@ -60,12 +60,9 @@ class Main : Fragment() {
 
         //list_id 를 받아옴
         val recent_result_list = View.findViewById<ListView>(R.id.recent_result_list)
+        val recent_continue_list = View.findViewById<ListView>(R.id.recent_continue_list)
 
 
-        //list row id를 받아옴
-        val recent_result_row_count = mainActivity.findViewById<TextView>(R.id.recent_count_row)
-        val recent_result_row_name = mainActivity.findViewById<TextView>(R.id.recent_name_row)
-        val recent_result_row_date = mainActivity.findViewById<TextView>(R.id.recent_date_row)
 
         //recent_result_list에 셋팅할 데이터를 가지고 있을 arrayList
 
@@ -87,14 +84,18 @@ class Main : Fragment() {
 
 
         //date를 셋팅할 view id
-        val ids = intArrayOf(R.id.recent_count_row,R.id.recent_name_row,R.id.recent_date_row)
+        val result_ids = intArrayOf(R.id.recent_count_row,R.id.recent_name_row,R.id.recent_date_row)
+        val continue_ids = intArrayOf(R.id.recent_continue_count_row,R.id.recent_continue_name_row,R.id.recent_continue_date_row)
 
 
         //SimpleAdapter 생성
-        val recent_result_list_adapter = SimpleAdapter(mainActivity,recent_result_list_datalist,R.layout.recent_resaerch_result_row,keys,ids)
+        val recent_result_list_adapter = SimpleAdapter(mainActivity,recent_result_list_datalist,R.layout.recent_resaerch_result_row,keys,result_ids)
         recent_result_list.adapter = recent_result_list_adapter
 
-        val saperalte = mainActivity.findViewById<View>(R.id.recent_result_saperlate)
+        val recent_continue_list_adapter = SimpleAdapter(mainActivity,recent_result_list_datalist,R.layout.recent_research_continue_row,keys,continue_ids)
+        recent_continue_list.adapter = recent_continue_list_adapter
+
+
 
 
 
