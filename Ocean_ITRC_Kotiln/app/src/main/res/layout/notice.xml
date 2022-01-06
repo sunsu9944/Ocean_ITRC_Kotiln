@@ -30,6 +30,7 @@
             android:lines="1"
             android:textColor="@color/black"
             android:fontFamily="@font/nanummyeongjobold"
+            android:ellipsize="end"
         ></TextView>
 
     </LinearLayout>

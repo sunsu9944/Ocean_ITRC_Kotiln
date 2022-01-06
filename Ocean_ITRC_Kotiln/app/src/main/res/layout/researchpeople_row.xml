@@ -34,6 +34,17 @@
             android:textSize="8pt"
         />
 
+        <TextView
+            android:layout_marginBottom="10dp"
+            android:id="@+id/people_role"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UIT 연구원"
+            android:fontFamily="@font/nanummyeongjobold"
+            android:textColor="@color/black"
+            android:layout_gravity="center"></TextView>
+
+
 
 
     </LinearLayout>

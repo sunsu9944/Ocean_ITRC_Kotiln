@@ -27,6 +27,9 @@
         <entry key="app/src/main/res/layout/fragment_research_result.xml" value="0.42552083333333335" />
         <entry key="app/src/main/res/layout/fragment_viewpager.xml" value="0.196547114617269" />
         <entry key="app/src/main/res/layout/notice.xml" value="0.382051282051282" />
+        <entry key="app/src/main/res/layout/recent_resaerch_result_row.xml" value="0.21979166666666666" />
+        <entry key="app/src/main/res/layout/recent_research_continue_row.xml" value="0.37777777777777777" />
+        <entry key="app/src/main/res/layout/researchpeople_row.xml" value="0.37777777777777777" />
         <entry key="app/src/main/res/layout/test.xml" value="0.382051282051282" />
         <entry key="app/src/main/res/layout/titlebar.xml" value="0.7071675519713514" />
       </map>

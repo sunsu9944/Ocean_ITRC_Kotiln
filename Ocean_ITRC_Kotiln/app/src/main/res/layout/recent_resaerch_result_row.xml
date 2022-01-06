@@ -33,13 +33,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:gravity="center"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:lines="2"
+        app:layout_constraintWidth_percent="0.5"
+        android:maxLines="2"
         android:text="논문 명입니다. 어느 정도 길어져도 대응이 가능하게 설계 되었 습니다."
         android:textColor="@color/black"
-        android:textSize="5pt"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/nanummyeongjobold"/>
 
     <TextView
