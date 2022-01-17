@@ -17,5 +17,4 @@ class research_continue : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_research_continue, container, false)
     }
-
 }

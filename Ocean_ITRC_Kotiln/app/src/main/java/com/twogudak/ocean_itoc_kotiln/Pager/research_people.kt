@@ -1,16 +1,26 @@
 package com.twogudak.ocean_itoc_kotiln.Pager
 
+import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.PopupWindow
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.twogudak.ocean_itoc_kotiln.MainActivity
 import com.twogudak.ocean_itoc_kotiln.R
+import com.twogudak.ocean_itoc_kotiln.dialog.SearchPeople_Dialog
+import kotlinx.android.synthetic.main.fragment_viewpager.*
+import kotlinx.android.synthetic.main.research_people.*
 import kotlinx.android.synthetic.main.researchpeople_row.view.*
+import kotlin.math.log
 
 
 class research_people : Fragment() {
@@ -18,12 +28,16 @@ class research_people : Fragment() {
 
     lateinit var mainActivity: MainActivity
 
+
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
 
         // 2. Context를 Activity로 형변환하여 할당당
         mainActivity =context as MainActivity
+
+
     }
 
 
@@ -48,6 +62,7 @@ class research_people : Fragment() {
         val peoplerecycler = mainActivity.findViewById<RecyclerView>(R.id.research_people_recycleview)
         peoplerecycler.adapter = peopleAdapter
         peoplerecycler.layoutManager = GridLayoutManager(mainActivity,3)
+        val dia = SearchPeople_Dialog(mainActivity)
 
 
 
@@ -79,9 +94,19 @@ class research_people : Fragment() {
             val rowImageView = itemView.research_people_img
             val rowName = itemView.research_people_textView
 
+
             override fun onClick(p0: View?) {
 
-                rowName.text = "클릭함"
+                Log.d("test","${adapterPosition}")
+                val dia = SearchPeople_Dialog(mainActivity)
+
+                dia.peoplename?.text = "${adapterPosition}"
+                dia.status()
+
+                dia.changetextname("${adapterPosition}")
+
+                dia.start()
+
             }
 
 

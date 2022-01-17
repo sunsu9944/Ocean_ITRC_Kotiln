@@ -22,13 +22,14 @@
     </RelativeLayout>
 
 
-    <fragment
+    <LinearLayout
+        android:orientation="vertical"
         android:id="@+id/main_View_Pager"
         android:name="com.twogudak.ocean_itoc_kotiln.Pager.ViewpagerFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/main_title_bar"
-        ></fragment>
+        ></LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

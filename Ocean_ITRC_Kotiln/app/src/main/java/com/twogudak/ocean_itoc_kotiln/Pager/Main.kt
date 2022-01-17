@@ -3,6 +3,7 @@ package com.twogudak.ocean_itoc_kotiln.Pager
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,10 +14,15 @@ import android.widget.SimpleAdapter
 import android.widget.TextView
 import com.twogudak.ocean_itoc_kotiln.MainActivity
 import com.twogudak.ocean_itoc_kotiln.R
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_viewpager.*
 import kotlinx.android.synthetic.main.notice.*
 import org.w3c.dom.Text
+import kotlin.math.log
 
 class Main : Fragment() {
+
 
     //data setting
     val recent_resultnumber = arrayOf("111","30","1","3","56")
@@ -96,12 +102,34 @@ class Main : Fragment() {
         recent_continue_list.adapter = recent_continue_list_adapter
 
 
-
-
-
-
         return View
    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        recent_result_list.setOnItemClickListener { adapterView, view, i, l ->
+            mainActivity.viewPager.setCurrentItem(2,true)
+            Log.d("text",recent_resultname[i])
+        }
+
+        recent_continue_list.setOnItemClickListener { adapterView, view, i, l ->
+            mainActivity.viewPager.setCurrentItem(2,true)
+        }
+
+
+        recent_result_button_more.setOnClickListener {
+            mainActivity.viewPager.setCurrentItem(3,true)
+        }
+
+        recent_continue_button_more.setOnClickListener {
+            mainActivity.viewPager.setCurrentItem(3,true)
+        }
+
+
+
+    }
+
 
 
 
