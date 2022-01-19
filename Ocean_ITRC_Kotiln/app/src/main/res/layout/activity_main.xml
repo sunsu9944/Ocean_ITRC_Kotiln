@@ -7,6 +7,18 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topbar"
+        android:backgroundTint="@color/them"
+        app:popupTheme="@style/Theme.Ocean_ITOC_Kotiln"
+        android:theme="@style/ToolBarColor"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
 
 
 
@@ -17,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        ></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@id/topbar"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

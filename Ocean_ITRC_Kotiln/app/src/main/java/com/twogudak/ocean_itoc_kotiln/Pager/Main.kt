@@ -67,6 +67,8 @@ class Main : Fragment() {
         //list_id 를 받아옴
         val recent_result_list = View.findViewById<ListView>(R.id.recent_result_list)
         val recent_continue_list = View.findViewById<ListView>(R.id.recent_continue_list)
+        recent_continue_list.divider = null
+        recent_result_list.divider = null
 
 
 

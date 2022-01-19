@@ -50,6 +50,7 @@ class ViewpagerFragment : Fragment() {
             }
         })
 
+
         TabLayoutMediator(tabLayout, viewPager) {tab, position ->
             tabLayout.setTabTextColors(ColorStateList.valueOf(Color.WHITE))
             when(position){
@@ -58,7 +59,7 @@ class ViewpagerFragment : Fragment() {
                 }
 
                 1 -> {
-                    tab.text = "인원"
+                    //tab.text = "인원"
                 }
 
                 2 -> {
