@@ -1,5 +1,7 @@
 package com.twogudak.ocean_itoc_kotiln.Pager
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -49,21 +51,22 @@ class ViewpagerFragment : Fragment() {
         })
 
         TabLayoutMediator(tabLayout, viewPager) {tab, position ->
+            tabLayout.setTabTextColors(ColorStateList.valueOf(Color.WHITE))
             when(position){
                 0 -> {
                     tab.text="Home"
                 }
 
                 1 -> {
-                    tab.text = "연구인원"
+                    tab.text = "인원"
                 }
 
                 2 -> {
-                    tab.text = "연구성과"
+                    tab.text = "성과"
                 }
 
                 3 -> {
-                    tab.text = "연구과제"
+                    tab.text = "과제"
                 }
 
                 4 -> {
