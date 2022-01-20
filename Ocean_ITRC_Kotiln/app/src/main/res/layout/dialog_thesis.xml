@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/dialog_thesis_containtview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/background_corner"
+        android:backgroundTint="#1C2245"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.75"
+        app:layout_constraintHeight_percent="0.8"
+
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/dialog_thesis_delete_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_delete"
+            android:background="#1C2245"
+            app:tint="@color/white"
+            android:layout_gravity="right"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp"/>
+
+        <ScrollView
+            android:id="@+id/dialog_thesis_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:background="#A6A6A6">
+
+            <LinearLayout
+                android:id="@+id/dialog_thesis_scrollview_contentiew"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_marginVertical="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="8pt"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/nanummyeongjoextrabold"
+                        android:textColor="@color/black"
+                        android:text="논문명 :  "/>
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/nanummyeongjo"
+                        android:textColor="@color/black"
+                        android:textSize="5pt"
+                        android:text="테스트 내용으로 알게될 논문 재목입니다."/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:fontFamily="@font/nanummyeongjoextrabold"
+                    android:text="내용"
+                    android:textSize="8pt"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_marginVertical="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanummyeongjo"
+                    android:textColor="@color/black"
+                    android:text="그냥 긴 논문 내용입니다. 이렇게 논문이 길게 들어가도 그냥 2줄로 해놓으면 길게 논문 내용이 들어가도 별 문제 없이 여러줄로 적히게 됩니다."
+                    />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

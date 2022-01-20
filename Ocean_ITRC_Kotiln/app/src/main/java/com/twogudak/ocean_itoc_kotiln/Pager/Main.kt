@@ -14,6 +14,8 @@ import android.widget.SimpleAdapter
 import android.widget.TextView
 import com.twogudak.ocean_itoc_kotiln.MainActivity
 import com.twogudak.ocean_itoc_kotiln.R
+import com.twogudak.ocean_itoc_kotiln.dialog.SearchPeople_Dialog
+import com.twogudak.ocean_itoc_kotiln.dialog.ThesisDialog
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_viewpager.*
@@ -111,8 +113,14 @@ class Main : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         recent_result_list.setOnItemClickListener { adapterView, view, i, l ->
-            mainActivity.viewPager.setCurrentItem(2,true)
+            //mainActivity.viewPager.setCurrentItem(2,true)
             Log.d("text",recent_resultname[i])
+
+            val dia = ThesisDialog(mainActivity)
+            dia.status()
+            dia.start()
+
+
         }
 
         recent_continue_list.setOnItemClickListener { adapterView, view, i, l ->

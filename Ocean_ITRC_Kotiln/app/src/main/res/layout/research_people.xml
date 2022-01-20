@@ -13,8 +13,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/background_corner"
         android:backgroundTint="#CFCFCF"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.75"
+        app:layout_constraintHeight_percent="0.7"
         android:orientation="vertical">
 
         <ImageButton
@@ -30,7 +32,7 @@
         <ImageView
             android:id="@+id/select_research_people_img"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
