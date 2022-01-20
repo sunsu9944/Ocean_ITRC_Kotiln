@@ -2,4 +2,19 @@
     <string name="app_name">Ocean_ITOC_Kotiln</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="recent_research_result">최신 성과</string>
+    <string name="recent_research_continue">최신 과제</string>
+    <string name="seemore">더보기</string>
+
+    <string name="number">순번</string>
+    <string name="thesis">논문명</string>
+    <string name="release_date">발표일</string>
+
+    <string name="bar_Home">메인</string>
+    <string name="bar_people">인원</string>
+    <string name="bar_result">성과</string>
+    <string name="bar_continue">과제</string>
+    <string name="bar_board">게시판</string>
+
 </resources>

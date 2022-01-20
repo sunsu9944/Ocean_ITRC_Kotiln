@@ -50,28 +50,34 @@ class ViewpagerFragment : Fragment() {
             }
         })
 
+        val tabmainstring = getString(R.string.bar_Home)
+        val tabpeoplestring = getString(R.string.bar_people)
+        val tabresultstring = getString(R.string.bar_result)
+        val tabassignmentstring = getString(R.string.bar_continue)
+        val tabblackboardstring = getString(R.string.bar_board)
+
 
         TabLayoutMediator(tabLayout, viewPager) {tab, position ->
             tabLayout.setTabTextColors(ColorStateList.valueOf(Color.WHITE))
             when(position){
                 0 -> {
-                    tab.text="Home"
+                    tab.text=tabmainstring
                 }
 
                 1 -> {
-                    //tab.text = "인원"
+                    tab.text = tabpeoplestring
                 }
 
                 2 -> {
-                    tab.text = "성과"
+                    tab.text = tabresultstring
                 }
 
                 3 -> {
-                    tab.text = "과제"
+                    tab.text = tabassignmentstring
                 }
 
                 4 -> {
-                    tab.text = "게시판"
+                    tab.text = tabblackboardstring
                 }
 
                 5 -> {

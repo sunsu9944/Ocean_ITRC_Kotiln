@@ -27,14 +27,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tabIndicatorColor="@color/white"
+        app:tabTextAppearance="@style/tab_text"
         android:background="#121827">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-        </LinearLayout>
-
     </com.google.android.material.tabs.TabLayout>
 
 

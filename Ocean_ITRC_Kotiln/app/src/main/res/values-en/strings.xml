@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="recent_research_result">Recent result</string>
+    <string name="recent_research_continue">Recent assignment</string>
+    <string name="seemore">See more</string>
+    <string name="number">Number</string>
+    <string name="thesis">Thesis</string>
+    <string name="release_date">Date</string>
+    
+
+    <string name="bar_Home">main</string>
+    <string name="bar_people">people</string>
+    <string name="bar_result">result</string>
+    <string name="bar_continue">assignments</string>
+    <string name="bar_board">blackboard</string>
+
+</resources>
