@@ -41,6 +41,7 @@ class ViewpagerFragment : Fragment() {
         pagerAdapter.addFragment(black_board())
         pagerAdapter.addFragment(user_info())
 
+
         viewPager.adapter = pagerAdapter
 
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/row_result_number"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:minWidth="40dp"
+                android:textColor="@color/black"
+                android:text="101"
+                android:textSize="8pt"
+                android:fontFamily="@font/nanummyeongjoextrabold"
+                android:gravity="center"/>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/row_result_title"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        android:textSize="7pt"
+                        android:maxLines="2"
+                        android:autoSizeTextType="uniform"
+                        android:fontFamily="@font/nanummyeongjoextrabold"
+                        android:text="논문 제목이 이렇게 되면 또 길어지거나 그두절로 적어지면 되요"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_marginStart="10dp"
+                            android:id="@+id/row_result_date"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nanummyeongjoextrabold"
+                            android:layout_gravity="center"
+                            android:text="2020-08-01"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="고준혁 오동협 이지원 이찬영"
+                            android:gravity="right"
+                            android:textColor="@color/black"
+                            android:layout_marginEnd="10dp"
+                            android:fontFamily="@font/nanummyeongjoextrabold"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/textcontent"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:maxLines="3"
+            android:text=" 논문 내용을 간략하게 보여줍니다.최대 3줄로 생각하고 있습니다. 더길어지면 안녕"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

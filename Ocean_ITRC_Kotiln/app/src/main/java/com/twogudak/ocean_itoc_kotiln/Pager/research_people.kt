@@ -57,14 +57,13 @@ class research_people : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        val peopleAdapter = research_Recycler_adapter()
 
+        val peopleAdapter = research_Recycler_adapter()
         val peoplerecycler = mainActivity.findViewById<RecyclerView>(R.id.research_people_recycleview)
+
+
         peoplerecycler.adapter = peopleAdapter
         peoplerecycler.layoutManager = GridLayoutManager(mainActivity,3)
-        val dia = SearchPeople_Dialog(mainActivity)
-
-
 
     }
 
@@ -84,6 +83,7 @@ class research_people : Fragment() {
         }
 
         override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
+
 
         }
 

@@ -34,8 +34,8 @@ class Main : Fragment() {
 
     val recent_resultdate = arrayOf("2020.08.01","2020.08.02","2020.08.03","2020.08.04","2020.08.05",)
 
-    //Context 받아오기
 
+    //Context 받아오기
     lateinit var mainActivity: MainActivity
 
     override fun onAttach(context: Context) {
@@ -112,6 +112,7 @@ class Main : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //리스트 뷰를 클릭 했을 때
         recent_result_list.setOnItemClickListener { adapterView, view, i, l ->
             //mainActivity.viewPager.setCurrentItem(2,true)
             Log.d("text",recent_resultname[i])
@@ -123,13 +124,18 @@ class Main : Fragment() {
 
         }
 
+        //최신 과제를 클릭했을때
         recent_continue_list.setOnItemClickListener { adapterView, view, i, l ->
-            mainActivity.viewPager.setCurrentItem(2,true)
+            Log.d("test",recent_resultname[i])
+
+            val dia = ThesisDialog(mainActivity)
+            dia.status()
+            dia.start()
         }
 
 
         recent_result_button_more.setOnClickListener {
-            mainActivity.viewPager.setCurrentItem(3,true)
+            mainActivity.viewPager.setCurrentItem(2,true)
         }
 
         recent_continue_button_more.setOnClickListener {

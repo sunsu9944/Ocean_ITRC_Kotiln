@@ -1,11 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Pager.research_result"
-    >
+    android:orientation="vertical">
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#354878"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="연구 성과"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nanummyeongjoextrabold"
+            >
+        </TextView>
+
+
+
+        <Button
+            android:id="@+id/result_button_1"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="전체"
+            android:textSize="5pt"
+            android:backgroundTint="#273049"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nanummyeongjoextrabold"
+            />
+
+        <Button
+            android:id="@+id/result_button_2"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="특허"
+            android:textSize="5pt"
+            android:backgroundTint="#354878"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nanummyeongjoextrabold"
+            />
+
+        <Button
+            android:id="@+id/result_button_3"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="논문"
+            android:textSize="5pt"
+            android:backgroundTint="#354878"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nanummyeongjoextrabold"
+            />
+
+        <Button
+            android:id="@+id/result_button_4"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="발표"
+            android:textSize="5pt"
+            android:backgroundTint="#354878"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nanummyeongjoextrabold"
+            android:layout_marginEnd="10dp"
+            />
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/research_result_recycelerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        >
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+</LinearLayout>

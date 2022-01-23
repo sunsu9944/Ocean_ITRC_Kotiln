@@ -1,18 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Pager.research_continue"
-    android:background="@color/teal_200">
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#354878"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="연구 과제"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nanummyeongjoextrabold"
+            >
+        </TextView>
+
+
+
+        <Button
+            android:id="@+id/continue_button_1"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="전체"
+            android:textSize="5pt"
+            android:backgroundTint="#273049"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nanummyeongjoextrabold"
+            />
+
+        <Button
+            android:id="@+id/continue_button_2"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="진행"
+            android:textSize="5pt"
+            android:backgroundTint="#354878"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nanummyeongjoextrabold"
+            />
+
+        <Button
+            android:id="@+id/continue_button_3"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="완료"
+            android:textSize="5pt"
+            android:backgroundTint="#354878"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nanummyeongjoextrabold"
+            />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="60dp"
+            android:layout_height="match_parent"/>
+
+
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/research_continue_recycelerview"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="연구 과제"
-        android:textColor="@color/white"
-        android:textSize="30pt"
-        ></TextView>
+        android:layout_weight="1"
+        >
+    </androidx.recyclerview.widget.RecyclerView>
 
-</RelativeLayout>
+</LinearLayout>
