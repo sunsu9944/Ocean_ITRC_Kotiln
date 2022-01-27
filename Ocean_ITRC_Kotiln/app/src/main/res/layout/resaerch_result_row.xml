@@ -10,12 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/black"
-            android:layout_marginBottom="10dp"/>
-
         <LinearLayout
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
@@ -97,6 +91,12 @@
             android:text="국내외 어구 모니터링 시스템 기술의 개발현황 조사 분석"/>
 
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        android:layout_marginBottom="10dp"/>
 
 
 </LinearLayout>

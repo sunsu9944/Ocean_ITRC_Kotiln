@@ -81,9 +81,6 @@ class research_continue : Fragment() {
 
         inner class ViewHolderClass(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
-
-
-
             override fun onClick(p0: View?) {
                 Log.d("test","${adapterPosition}")
 
@@ -91,13 +88,8 @@ class research_continue : Fragment() {
                 dia.status()
                 dia.textTitle?.text = "연구 과제에서 클릭 ${adapterPosition}번째 자료"
                 dia.start()
-
-
             }
-
-
         }
-
     }
 
     fun setbackground(number : Int){
