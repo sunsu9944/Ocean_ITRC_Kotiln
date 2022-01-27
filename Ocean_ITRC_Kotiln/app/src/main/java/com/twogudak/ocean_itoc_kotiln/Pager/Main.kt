@@ -119,9 +119,8 @@ class Main : Fragment() {
 
             val dia = ThesisDialog(mainActivity)
             dia.status()
+            dia.textTitle?.text = "분산형 수중관측 제어망 개발"
             dia.start()
-
-
         }
 
         //최신 과제를 클릭했을때
@@ -130,7 +129,8 @@ class Main : Fragment() {
 
             val dia = ThesisDialog(mainActivity)
             dia.status()
-            dia.start()
+            dia.changetext(dia.textTitle,"수중관측망")
+           dia.start()
         }
 
 

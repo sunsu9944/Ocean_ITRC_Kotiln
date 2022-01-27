@@ -49,7 +49,7 @@
                         android:maxLines="2"
                         android:autoSizeTextType="uniform"
                         android:fontFamily="@font/nanummyeongjoextrabold"
-                        android:text="논문 제목이 이렇게 되면 또 길어지거나 그두절로 적어지면 되요"/>
+                        android:text="어구 자동식별 부이를 이용한 어구 모니터링 시스템 개발 및 관제 센터 구축 기획연"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -65,13 +65,13 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/nanummyeongjoextrabold"
                             android:layout_gravity="center"
-                            android:text="2020-08-01"/>
+                            android:text="2015-10-01 ~ 2016-03-31"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="고준혁 오동협 이지원 이찬영"
+                            android:text="고학림"
                             android:gravity="right"
                             android:textColor="@color/black"
                             android:layout_marginEnd="10dp"
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:maxLines="3"
-            android:text=" 논문 내용을 간략하게 보여줍니다.최대 3줄로 생각하고 있습니다. 더길어지면 안녕"/>
+            android:text="국내외 어구 모니터링 시스템 기술의 개발현황 조사 분석"/>
 
     </LinearLayout>
 

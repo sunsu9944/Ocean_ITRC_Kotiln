@@ -100,10 +100,9 @@ class research_people : Fragment() {
                 Log.d("test","${adapterPosition}")
                 val dia = SearchPeople_Dialog(mainActivity)
 
-                dia.peoplename?.text = "${adapterPosition}"
-                dia.status()
 
-                dia.changetextname("${adapterPosition}")
+                dia.status()
+                dia.changetext(dia.peoplename,"${adapterPosition+1}")
 
                 dia.start()
 

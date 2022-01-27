@@ -45,49 +45,257 @@
                 android:layout_marginHorizontal="10dp"
                 android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/dialog_thesis_title"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15dp"
+                    android:fontFamily="@font/nanummyeongjobold"
+                    android:textColor="@color/black"
+                    android:textSize="8pt"
+                    android:text="어구 작동식별 부이를 이용한 어구 모니터링 시스템 개발 및 관제센터 구축 기획연구"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="#20000000"/>
+
                 <LinearLayout
-                    android:layout_marginVertical="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="연구책임자:"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"/>
+
+                    <TextView
+                        android:id="@+id/dialog_thesis_person"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="고학림"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="날짜:"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"/>
+
+                    <TextView
+                        android:id="@+id/dialog_thesis_date"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2015-10-01 ~ 2016-03-31"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"/>
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="8pt"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/nanummyeongjoextrabold"
+                        android:text="사업:"
                         android:textColor="@color/black"
-                        android:text="논문명 :  "/>
+                        android:textSize="8pt"/>
 
                     <TextView
-                        android:layout_gravity="center"
+                        android:id="@+id/dialog_thesis_Business_name"
+                        android:layout_marginStart="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/nanummyeongjobold"
+                        android:text="해양수산연구 기획사업"
                         android:textColor="@color/black"
-                        android:textSize="5pt"
-                        android:text="테스트 내용으로 알게될 논문 재목입니다."/>
+                        android:textSize="8pt"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="부서:"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"/>
+
+                    <TextView
+                        android:id="@+id/dialog_thesis_department_name"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="해양수산부"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"/>
 
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="5dp"
-                    android:fontFamily="@font/nanummyeongjoextrabold"
-                    android:text="내용"
-                    android:textSize="8pt"
-                    android:textColor="@color/black"/>
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="주관기관:"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"/>
+
+                    <TextView
+                        android:id="@+id/dialog_thesis_origanization_name"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="호서대학교 산학협력단"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="지원기관:"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"/>
+
+                    <TextView
+                        android:id="@+id/dialog_thesis_support_name"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="해양수산과학기술진흥원"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="참여기관:"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"/>
+
+                    <TextView
+                        android:id="@+id/dialog_thesis_participating_name"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(주)산엔지니어"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"/>
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="#20000000"/>
 
                 <TextView
-                    android:layout_marginVertical="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="연구 목표:"
+                    android:textColor="@color/black"
+                    android:textSize="8pt"/>
+
+
+                <TextView
+                    android:id="@+id/dialog_search_goal"
+                    android:layout_marginVertical="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nanummyeongjobold"
                     android:textColor="@color/black"
-                    android:text="그냥 긴 논문 내용입니다. 이렇게 논문이 길게 들어가도 그냥 2줄로 해놓으면 길게 논문 내용이 들어가도 별 문제 없이 여러줄로 적히게 됩니다."
+                    android:textSize="8pt"
+                    android:text="최근의 특허 및 선진국 기술개발동향과 시장 분석을 통해 페어구 처리를 포함한 어구
+자동식별 부이(AIB)를 이용한 어구 모니터링 시스템 개발 및 관제센터 구축 방향을 검토하여 명확한 기술개발 로드맵 작성"
                     />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="#20000000"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="연구 내용:"
+                    android:textColor="@color/black"
+                    android:textSize="8pt"/>
+
+
+                <TextView
+                    android:id="@+id/dialog_content_main"
+                    android:layout_marginVertical="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanummyeongjobold"
+                    android:textColor="@color/black"
+                    android:textSize="8pt"
+                    android:text="국내외 어구 모니터링 시스템 기술의 개발현황 조사, 분석"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="#20000000"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="기대성과:"
+                    android:textColor="@color/black"
+                    android:textSize="8pt"/>
+
+
+                <TextView
+                    android:id="@+id/dialog_result_examination"
+                    android:layout_marginVertical="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanummyeongjobold"
+                    android:textColor="@color/black"
+                    android:textSize="8pt"
+                    android:text="기존의 어구들의 단선 관리 차원을 넘어서 유실어구 감시 및 도난관리 기술을 기반으로 원격
+에서의 실시간 모티터링은 물론 국자적인 관제기술 구축으로 유실 어구/폐어구 관리를 가능하게 함으로서 바닷속 페어구 때문에 발생하는 어업피해와 해양 생태계 훼손, 해양 안전사고 등 사전에 방지하기 위한 어구관리 강화정책 및 어구 관리법을
+위한 근간이 되는 국가적인 정책 수행이 가능"
+                    />
+
 
             </LinearLayout>
         </ScrollView>

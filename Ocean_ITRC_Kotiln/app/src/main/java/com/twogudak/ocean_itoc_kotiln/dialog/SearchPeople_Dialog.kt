@@ -15,8 +15,9 @@ class SearchPeople_Dialog(context: Context) {
 
     val dialog = Dialog(context)
 
-    lateinit var peopleimg : ImageView
+    var peopleimg : ImageView? = null
     var peoplename : TextView? = null
+
     lateinit var cancelButton : ImageButton
 
     fun status(){
@@ -37,8 +38,8 @@ class SearchPeople_Dialog(context: Context) {
         dialog.show()
     }
 
-    fun changetextname(name:String){
-        peoplename?.text = name
+    fun changetext(textView:TextView? ,name:String){
+        textView?.text = name
     }
 
 
