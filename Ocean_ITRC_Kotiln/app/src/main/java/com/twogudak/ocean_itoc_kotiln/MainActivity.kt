@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
     val frag = ViewpagerFragment()
 
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -123,17 +125,10 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    val peope_name = arrayOf(
+        "고준혁","고학림","고준혁","고학림","고준혁","고학림","고준혁","고학림","고준혁","고학림","고준혁","고학림","고준혁","고학림",
+        "고준혁","고학림","고준혁","고학림","고준혁","고학림","고준혁","고학림","고준혁","고학림","고준혁","고학림","고준혁","고학림",
+        "고준혁","고학림",
+    )
 
 }

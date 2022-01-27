@@ -17,6 +17,10 @@ class SearchPeople_Dialog(context: Context) {
 
     var peopleimg : ImageView? = null
     var peoplename : TextView? = null
+    var people_department : TextView? = null
+    var people_rol : TextView? = null
+    var people_phonenumber : TextView? = null
+    var people_email : TextView? = null
 
     lateinit var cancelButton : ImageButton
 
@@ -27,7 +31,12 @@ class SearchPeople_Dialog(context: Context) {
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         cancelButton = dialog.findViewById(R.id.dismissbt)
+        peopleimg = dialog.findViewById(R.id.select_research_people_img)
         peoplename = dialog.findViewById(R.id.select_research_people_name)
+        people_department = dialog.findViewById(R.id.select_research_people_name)
+        people_rol = dialog.findViewById(R.id.select_research_people_name)
+        people_phonenumber = dialog.findViewById(R.id.select_research_people_name)
+        people_email = dialog.findViewById(R.id.select_research_people_name)
 
         cancelButton.setOnClickListener {
             dialog.dismiss()

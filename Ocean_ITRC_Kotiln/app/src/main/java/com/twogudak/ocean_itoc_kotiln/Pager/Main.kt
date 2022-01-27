@@ -8,10 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.ListView
-import android.widget.SimpleAdapter
-import android.widget.TextView
+import android.widget.*
 import com.twogudak.ocean_itoc_kotiln.MainActivity
 import com.twogudak.ocean_itoc_kotiln.R
 import com.twogudak.ocean_itoc_kotiln.dialog.SearchPeople_Dialog
@@ -63,8 +60,14 @@ class Main : Fragment() {
         val View =  inflater.inflate(R.layout.fragment_main, container, false)
 
         val notice_content_text = View.findViewById<TextView>(R.id.notice_content_text)
+        val notice_button = View.findViewById<Button>(R.id.notice_button)
 
-        notice_content_text.text = "fragment에서 택스트를 바꾸어 보았습니다."
+        notice_content_text.text = "Android-kotlin 첫번째 버전입니다."
+
+        notice_button.setOnClickListener {
+            mainActivity.viewPager.setCurrentItem(4,false)
+        }
+
 
         //list_id 를 받아옴
         val recent_result_list = View.findViewById<ListView>(R.id.recent_result_list)

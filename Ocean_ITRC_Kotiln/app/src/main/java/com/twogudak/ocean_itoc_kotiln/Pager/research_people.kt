@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.PopupWindow
+import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.twogudak.ocean_itoc_kotiln.MainActivity
@@ -28,6 +29,9 @@ class research_people : Fragment() {
 
     lateinit var mainActivity: MainActivity
 
+    lateinit var peoplename: Array<String>
+
+
 
 
     override fun onAttach(context: Context) {
@@ -36,7 +40,7 @@ class research_people : Fragment() {
 
         // 2. Context를 Activity로 형변환하여 할당당
         mainActivity =context as MainActivity
-
+        peoplename = mainActivity.peope_name
 
     }
 
@@ -69,8 +73,10 @@ class research_people : Fragment() {
 
     inner class research_Recycler_adapter: RecyclerView.Adapter<research_Recycler_adapter.ViewHolderClass>() {
 
+
+
         override fun getItemCount(): Int {
-            return 30
+            return peoplename.size
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
@@ -79,11 +85,14 @@ class research_people : Fragment() {
             val holder = ViewHolderClass(itemView)
             itemView.setOnClickListener(holder)
 
-            return holder
+            val rowName = itemView.findViewById<TextView>(R.id.research_people_textView)
+
+           return holder
         }
 
         override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
 
+            holder.rowName.text = "${peoplename[position]}"
 
         }
 
@@ -93,7 +102,6 @@ class research_people : Fragment() {
 
             val rowImageView = itemView.research_people_img
             val rowName = itemView.research_people_textView
-
 
             override fun onClick(p0: View?) {
 

@@ -50,7 +50,8 @@
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
                     android:fontFamily="@font/nanummyeongjobold"
                     android:textColor="@color/black"
                     android:textSize="8pt"
@@ -62,7 +63,7 @@
                     android:background="#20000000"/>
 
                 <LinearLayout
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="30dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -199,7 +200,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginBottom="30dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -224,7 +225,7 @@
                     android:background="#20000000"/>
 
                 <TextView
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="30dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="연구 목표:"
@@ -234,7 +235,8 @@
 
                 <TextView
                     android:id="@+id/dialog_search_goal"
-                    android:layout_marginVertical="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nanummyeongjobold"
@@ -250,7 +252,7 @@
                     android:background="#20000000"/>
 
                 <TextView
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="30dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="연구 내용:"
@@ -260,7 +262,8 @@
 
                 <TextView
                     android:id="@+id/dialog_content_main"
-                    android:layout_marginVertical="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nanummyeongjobold"
@@ -275,7 +278,7 @@
                     android:background="#20000000"/>
 
                 <TextView
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="기대성과:"
@@ -285,7 +288,8 @@
 
                 <TextView
                     android:id="@+id/dialog_result_examination"
-                    android:layout_marginVertical="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nanummyeongjobold"

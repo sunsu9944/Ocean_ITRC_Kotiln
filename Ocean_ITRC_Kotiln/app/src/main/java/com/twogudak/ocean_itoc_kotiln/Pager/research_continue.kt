@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.twogudak.ocean_itoc_kotiln.MainActivity
 import com.twogudak.ocean_itoc_kotiln.R
+import com.twogudak.ocean_itoc_kotiln.dialog.ThesisDialog
 import kotlinx.android.synthetic.main.fragment_research_continue.*
 import kotlinx.android.synthetic.main.fragment_research_result.*
 
@@ -84,8 +85,12 @@ class research_continue : Fragment() {
 
 
             override fun onClick(p0: View?) {
-
                 Log.d("test","${adapterPosition}")
+
+                val dia = ThesisDialog(mainActivity)
+                dia.status()
+                dia.textTitle?.text = "연구 과제에서 클릭 ${adapterPosition}번째 자료"
+                dia.start()
 
 
             }
