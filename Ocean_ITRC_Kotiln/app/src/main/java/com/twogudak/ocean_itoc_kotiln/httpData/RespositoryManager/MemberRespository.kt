@@ -1,9 +1,9 @@
-package com.twogudak.ocean_itoc_kotiln.httpData.Members.RespositoryManager
+package com.twogudak.ocean_itoc_kotiln.httpData.RespositoryManager
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.twogudak.ocean_itoc_kotiln.httpData.Members.MemberDTO
-import com.twogudak.ocean_itoc_kotiln.httpData.Members.loadRetrofit
+import com.twogudak.ocean_itoc_kotiln.httpData.loadRetrofit
 import retrofit2.Call
 
 class MemberRespository {

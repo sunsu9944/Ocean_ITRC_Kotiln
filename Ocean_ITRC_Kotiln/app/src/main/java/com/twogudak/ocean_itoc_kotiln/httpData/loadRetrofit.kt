@@ -1,4 +1,4 @@
-package com.twogudak.ocean_itoc_kotiln.httpData.Members
+package com.twogudak.ocean_itoc_kotiln.httpData
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

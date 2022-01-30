@@ -1,4 +1,4 @@
-package com.twogudak.ocean_itoc_kotiln.UI.Pager
+package com.twogudak.ocean_itoc_kotiln.UI.Pager.Research_continue
 
 import android.content.Context
 import android.graphics.Color
@@ -8,17 +8,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.twogudak.ocean_itoc_kotiln.MainActivity
 import com.twogudak.ocean_itoc_kotiln.R
-import com.twogudak.ocean_itoc_kotiln.UI.Pager.dialog.ThesisDialog
+import com.twogudak.ocean_itoc_kotiln.UI.Pager.People.MemberViewModel
+import com.twogudak.ocean_itoc_kotiln.UI.Pager.People.PeopleAdapter
+import com.twogudak.ocean_itoc_kotiln.UI.dialog.ThesisDialog
 import kotlinx.android.synthetic.main.fragment_research_continue.*
-import kotlinx.android.synthetic.main.fragment_research_result.*
 
 class research_continue : Fragment() {
 
     lateinit var mainActivity: MainActivity
+    private lateinit var Research_Viewmodel : Research_Continue_Viewmodel
+    lateinit var researchContinueAdapter : Research_continue_Adapter
+    lateinit var peoplerecycler: RecyclerView
 
 
     override fun onAttach(context: Context) {
@@ -26,6 +33,7 @@ class research_continue : Fragment() {
 
         mainActivity = context as MainActivity
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,63 +43,57 @@ class research_continue : Fragment() {
         return inflater.inflate(R.layout.fragment_research_continue, container, false)
     }
 
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
 
-        val peopleAdapter = research_Recycler_adapter()
-        val peoplerecycler = mainActivity.findViewById<RecyclerView>(R.id.research_continue_recycelerview)
+
+        Research_Viewmodel = ViewModelProvider(this).get(Research_Continue_Viewmodel::class.java)
+        Research_Viewmodel.getResearchcontinue().observe(viewLifecycleOwner){
+
+            researchContinueAdapter = Research_continue_Adapter(requireContext(), it)
 
 
-        peoplerecycler.adapter = peopleAdapter
-        peoplerecycler.layoutManager = LinearLayoutManager(mainActivity)
+            peoplerecycler = mainActivity.findViewById<RecyclerView>(R.id.research_continue_recycelerview)
+            peoplerecycler.adapter = researchContinueAdapter
+            peoplerecycler.layoutManager = LinearLayoutManager(mainActivity)
+
+        }
+
+        Research_Viewmodel.getMessage().observe(viewLifecycleOwner){
+            Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+        }
+
+
+//        peoplerecycler.adapter = peopleAdapter
 
         mainActivity.continue_button_1.setOnClickListener {
             Log.e("test","buttonClick")
             setbackground(1)
+
+            //전체 필터
+            researchContinueAdapter.filter.filter("")
+
+
         }
         mainActivity.continue_button_2.setOnClickListener {
             setbackground(2)
+            //진행중 연구 필터링
+            researchContinueAdapter.filter.filter("1")
+
         }
         mainActivity.continue_button_3.setOnClickListener {
             setbackground(3)
+            //진행 완료 연구 필터링
+            researchContinueAdapter.filter.filter("2")
+
         }
 
     }
 
-    inner class research_Recycler_adapter: RecyclerView.Adapter<research_Recycler_adapter.ViewHolderClass>() {
-
-        override fun getItemCount(): Int {
-            return 30
-        }
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
-
-            val itemView = layoutInflater.inflate(R.layout.resaerch_result_row,null)
-            val holder = ViewHolderClass(itemView)
-            itemView.setOnClickListener(holder)
-
-            return holder
-        }
-
-        override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
 
 
-        }
-
-
-        inner class ViewHolderClass(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-
-            override fun onClick(p0: View?) {
-                Log.d("test","${adapterPosition}")
-
-                val dia = ThesisDialog(mainActivity)
-                dia.status()
-                dia.textTitle?.text = "연구 과제에서 클릭 ${adapterPosition}번째 자료"
-                dia.start()
-            }
-        }
-    }
 
     fun setbackground(number : Int){
         when(number){

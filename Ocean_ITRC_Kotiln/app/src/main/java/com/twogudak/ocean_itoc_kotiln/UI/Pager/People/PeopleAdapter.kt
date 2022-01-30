@@ -6,8 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.twogudak.ocean_itoc_kotiln.R
-import com.twogudak.ocean_itoc_kotiln.UI.Pager.dialog.SearchPeople_Dialog
+import com.twogudak.ocean_itoc_kotiln.UI.dialog.SearchPeople_Dialog
+import com.twogudak.ocean_itoc_kotiln.httpData.DOMAIN
 import com.twogudak.ocean_itoc_kotiln.httpData.Members.MemberDTO
 import kotlinx.android.synthetic.main.researchpeople_row.view.*
 
@@ -34,6 +37,13 @@ class PeopleAdapter(var context: Context, var memberList: MemberDTO,): RecyclerV
 
         holder.rowName.text = "${memberList.memberlist[position].name_ko}"
         holder.rowposition.text = "${memberList.memberlist[position].position_ko}"
+        val imgURL = "${DOMAIN.IMAGE_LOAD_URL}${memberList.memberlist[position].photo}"
+        Glide.with(context).load(imgURL)
+            .error(Glide.with(context).load(R.drawable.defaultimg))
+            .skipMemoryCache(true)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
+            .into(holder.rowImageView)
+
 
     }
 
@@ -56,6 +66,12 @@ class PeopleAdapter(var context: Context, var memberList: MemberDTO,): RecyclerV
             dia.changetext(dia.people_department,"${memberList.memberlist[adapterPosition].department_ko}")
             dia.changetext(dia.people_phonenumber,"${memberList.memberlist[adapterPosition].phone}")
             dia.changetext(dia.people_email,"${memberList.memberlist[adapterPosition].email}")
+            val imgURL = "${DOMAIN.IMAGE_LOAD_URL}${memberList.memberlist[position].photo}"
+            Glide.with(context).load(imgURL)
+                .error(Glide.with(context).load(R.drawable.defaultimg))
+                .skipMemoryCache(true)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .into(dia.peopleimg!!)
 
             dia.start()
 

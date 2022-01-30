@@ -11,7 +11,9 @@ import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.twogudak.ocean_itoc_kotiln.R
+import com.twogudak.ocean_itoc_kotiln.UI.Pager.Main.Main
 import com.twogudak.ocean_itoc_kotiln.UI.Pager.People.research_people
+import com.twogudak.ocean_itoc_kotiln.UI.Pager.Research_continue.research_continue
 import com.twogudak.ocean_itoc_kotiln.UI.Pager.blackboard.black_board
 import kotlinx.android.synthetic.main.fragment_viewpager.*
 

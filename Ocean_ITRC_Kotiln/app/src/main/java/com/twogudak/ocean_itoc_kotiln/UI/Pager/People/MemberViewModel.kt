@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.twogudak.ocean_itoc_kotiln.httpData.Members.RespositoryManager.MemberRespository
+import com.twogudak.ocean_itoc_kotiln.httpData.RespositoryManager.MemberRespository
 import com.twogudak.ocean_itoc_kotiln.httpData.Members.MemberDTO
 
 class MemberViewModel(application: Application) : AndroidViewModel(application){

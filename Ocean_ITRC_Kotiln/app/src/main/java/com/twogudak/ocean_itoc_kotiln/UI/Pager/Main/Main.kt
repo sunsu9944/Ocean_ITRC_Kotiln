@@ -1,7 +1,6 @@
-package com.twogudak.ocean_itoc_kotiln.UI.Pager
+package com.twogudak.ocean_itoc_kotiln.UI.Pager.Main
 
 import android.content.Context
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -11,14 +10,9 @@ import android.view.ViewGroup
 import android.widget.*
 import com.twogudak.ocean_itoc_kotiln.MainActivity
 import com.twogudak.ocean_itoc_kotiln.R
-import com.twogudak.ocean_itoc_kotiln.UI.Pager.dialog.SearchPeople_Dialog
-import com.twogudak.ocean_itoc_kotiln.UI.Pager.dialog.ThesisDialog
-import kotlinx.android.synthetic.main.activity_main.*
+import com.twogudak.ocean_itoc_kotiln.UI.dialog.ThesisDialog
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_viewpager.*
-import kotlinx.android.synthetic.main.notice.*
-import org.w3c.dom.Text
-import kotlin.math.log
 
 class Main : Fragment() {
 
@@ -144,7 +138,6 @@ class Main : Fragment() {
         recent_continue_button_more.setOnClickListener {
             mainActivity.viewPager.setCurrentItem(3,true)
         }
-
 
 
     }

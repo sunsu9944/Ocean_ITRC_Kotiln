@@ -11,8 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.twogudak.ocean_itoc_kotiln.MainActivity
 import com.twogudak.ocean_itoc_kotiln.R
-import com.twogudak.ocean_itoc_kotiln.UI.Pager.dialog.ThesisDialog
-import com.twogudak.ocean_itoc_kotiln.UI.Pager.dialog.notice_dialog
+import com.twogudak.ocean_itoc_kotiln.UI.dialog.notice_dialog
 
 class notice : Fragment() {
 

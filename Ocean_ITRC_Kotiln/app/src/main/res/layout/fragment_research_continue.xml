@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.Pager.research_continue"
+    tools:context=".UI.Pager.Research_continue.research_continue"
     android:orientation="vertical">
 
     <LinearLayout

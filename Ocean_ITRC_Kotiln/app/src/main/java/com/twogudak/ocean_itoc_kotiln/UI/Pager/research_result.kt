@@ -8,16 +8,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.twogudak.ocean_itoc_kotiln.MainActivity
 import com.twogudak.ocean_itoc_kotiln.R
-import com.twogudak.ocean_itoc_kotiln.UI.Pager.dialog.SearchPeople_Dialog
-import com.twogudak.ocean_itoc_kotiln.UI.Pager.dialog.ThesisDialog
+import com.twogudak.ocean_itoc_kotiln.UI.dialog.ThesisDialog
 import kotlinx.android.synthetic.main.fragment_research_result.*
-import kotlinx.android.synthetic.main.researchpeople_row.view.*
-import kotlin.math.log
 
 
 class research_result : Fragment() {

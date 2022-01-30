@@ -1,15 +1,12 @@
-package com.twogudak.ocean_itoc_kotiln.UI.Pager.dialog
+package com.twogudak.ocean_itoc_kotiln.UI.dialog
 
 import android.app.Dialog
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
 import android.view.ViewGroup
-import android.view.Window
-import android.view.WindowManager
 import android.widget.ImageButton
 import android.widget.TextView
 import com.twogudak.ocean_itoc_kotiln.R
-import org.w3c.dom.Text
 
 class ThesisDialog(context: Context) {
 

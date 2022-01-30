@@ -1,11 +1,10 @@
-package com.twogudak.ocean_itoc_kotiln.UI.Pager.dialog
+package com.twogudak.ocean_itoc_kotiln.UI.dialog
 
 import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
