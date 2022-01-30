@@ -1,4 +1,4 @@
-package com.twogudak.ocean_itoc_kotiln.Pager
+package com.twogudak.ocean_itoc_kotiln.UI.Pager
 
 import android.content.Context
 import android.graphics.Color
@@ -13,10 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.twogudak.ocean_itoc_kotiln.MainActivity
 import com.twogudak.ocean_itoc_kotiln.R
-import com.twogudak.ocean_itoc_kotiln.dialog.SearchPeople_Dialog
-import com.twogudak.ocean_itoc_kotiln.dialog.ThesisDialog
+import com.twogudak.ocean_itoc_kotiln.UI.Pager.dialog.SearchPeople_Dialog
+import com.twogudak.ocean_itoc_kotiln.UI.Pager.dialog.ThesisDialog
 import kotlinx.android.synthetic.main.fragment_research_result.*
 import kotlinx.android.synthetic.main.researchpeople_row.view.*
+import kotlin.math.log
 
 
 class research_result : Fragment() {
@@ -41,8 +42,8 @@ class research_result : Fragment() {
     }
 
 
-    override fun onStart() {
-        super.onStart()
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
 
         val peopleAdapter = research_Recycler_adapter()
@@ -54,15 +55,19 @@ class research_result : Fragment() {
 
         mainActivity.result_button_1.setOnClickListener {
             setbackground(1)
+            Log.e("test","1")
         }
         mainActivity.result_button_2.setOnClickListener {
             setbackground(2)
+            Log.e("test","1")
         }
         mainActivity.result_button_3.setOnClickListener {
             setbackground(3)
+            Log.e("test","1")
         }
         mainActivity.result_button_4.setOnClickListener {
             setbackground(4)
+            Log.e("test","1")
         }
 
     }

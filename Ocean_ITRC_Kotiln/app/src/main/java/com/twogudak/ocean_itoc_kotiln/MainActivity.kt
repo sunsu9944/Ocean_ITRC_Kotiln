@@ -17,12 +17,21 @@ import androidx.core.text.set
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.fragment.app.FragmentStatePagerAdapter
-import com.twogudak.ocean_itoc_kotiln.Pager.ViewpagerFragment
+import com.twogudak.ocean_itoc_kotiln.UI.Pager.ViewpagerFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_viewpager.*
 import kotlinx.android.synthetic.main.notice.*
 import kotlinx.android.synthetic.main.research_people.*
 import kotlinx.android.synthetic.main.titlebar.*
+import org.json.JSONArray
+import org.json.JSONObject
+import java.io.BufferedReader
+import java.io.InputStream
+import java.io.InputStreamReader
+import java.net.HttpURLConnection
+import java.net.URL
+import kotlin.concurrent.thread
+import kotlin.coroutines.CoroutineContext
 import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
@@ -49,6 +58,9 @@ class MainActivity : AppCompatActivity() {
 
         //viewPager 불러오기
         transFragment("viewPager")
+
+        getdata()
+
 
     }
 
@@ -125,10 +137,67 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    val peope_name = arrayOf(
-        "고준혁","고학림","고준혁","고학림","고준혁","고학림","고준혁","고학림","고준혁","고학림","고준혁","고학림","고준혁","고학림",
-        "고준혁","고학림","고준혁","고학림","고준혁","고학림","고준혁","고학림","고준혁","고학림","고준혁","고학림","고준혁","고학림",
-        "고준혁","고학림",
+
+
+
+    fun getdata(){
+        thread {
+            val url = URL("http://oceanic-ict.hoseo.ac.kr/members/android/memberALL")
+
+            val conn = url.openConnection() as HttpURLConnection
+            conn.requestMethod = "POST"
+
+            //문자열 데이터를 읽어온다.
+            val isr = InputStreamReader(conn.inputStream,"UTF-8")
+            val br = BufferedReader(isr)
+
+            var str:String? = null
+            val buf = StringBuffer()
+            do {
+                str = br.readLine()
+                if(str != null) {
+                    buf.append(str)
+                }
+            }while(str!=null)
+
+            val data = buf.toString()
+
+            //jsonData 분석하기
+            val root = JSONObject(data)
+            val array = root.optJSONArray("result")
+            for(i in 0 until array.length()){
+                val obj = array.getJSONObject(i)
+                val peoplename = obj.getString("name_ko")
+                val position_ko_row = obj.getString("position_ko")
+                val department_ko_row = obj.getString("department_ko")
+                val phonenumber = obj.getString("phone")
+                val email = obj.getString("email")
+
+
+
+                peope_name.add(peoplename)
+                position_ko.add(position_ko_row)
+                department_ko.add(department_ko_row)
+                phone.add(phonenumber)
+                emailadress.add(email)
+            }
+
+        }
+   }
+
+    val peope_name = arrayListOf<String>()
+    val position_ko = arrayListOf<String>()
+    val department_ko = arrayListOf<String>()
+    val phone = arrayListOf<String>()
+    val emailadress = arrayListOf<String>()
+
+    val imgtitle = arrayOf(
+        "짧은글자","긴글자가가가가가가가각","긴글자한번더긴가가가가가","짧은글","홀수를맞추",
+        "짧은글자","긴글자가가가가가가가각","긴글자한번더긴가가가가가","짧은글","홀수를맞추",
+        "짧은글자","긴글자가가가가가가가각","긴글자한번더긴가가가가가","짧은글","홀수를맞추",
+        "짧은글자","긴글자가가가가가가가각","긴글자한번더긴가가가가가","짧은글","홀수를맞추",
     )
+
+
 
 }

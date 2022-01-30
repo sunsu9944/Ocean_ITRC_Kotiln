@@ -1,4 +1,4 @@
-package com.twogudak.ocean_itoc_kotiln.dialog
+package com.twogudak.ocean_itoc_kotiln.UI.Pager.dialog
 
 import android.app.Dialog
 import android.content.Context

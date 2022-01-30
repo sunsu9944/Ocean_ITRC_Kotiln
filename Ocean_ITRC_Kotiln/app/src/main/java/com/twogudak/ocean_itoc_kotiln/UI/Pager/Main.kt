@@ -1,4 +1,4 @@
-package com.twogudak.ocean_itoc_kotiln.Pager
+package com.twogudak.ocean_itoc_kotiln.UI.Pager
 
 import android.content.Context
 import android.graphics.Color
@@ -11,8 +11,8 @@ import android.view.ViewGroup
 import android.widget.*
 import com.twogudak.ocean_itoc_kotiln.MainActivity
 import com.twogudak.ocean_itoc_kotiln.R
-import com.twogudak.ocean_itoc_kotiln.dialog.SearchPeople_Dialog
-import com.twogudak.ocean_itoc_kotiln.dialog.ThesisDialog
+import com.twogudak.ocean_itoc_kotiln.UI.Pager.dialog.SearchPeople_Dialog
+import com.twogudak.ocean_itoc_kotiln.UI.Pager.dialog.ThesisDialog
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_viewpager.*

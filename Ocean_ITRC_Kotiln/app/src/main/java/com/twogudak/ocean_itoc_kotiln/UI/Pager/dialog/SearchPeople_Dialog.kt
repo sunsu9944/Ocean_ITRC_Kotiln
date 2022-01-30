@@ -1,4 +1,4 @@
-package com.twogudak.ocean_itoc_kotiln.dialog
+package com.twogudak.ocean_itoc_kotiln.UI.Pager.dialog
 
 import android.app.Dialog
 import android.content.Context
@@ -33,10 +33,10 @@ class SearchPeople_Dialog(context: Context) {
         cancelButton = dialog.findViewById(R.id.dismissbt)
         peopleimg = dialog.findViewById(R.id.select_research_people_img)
         peoplename = dialog.findViewById(R.id.select_research_people_name)
-        people_department = dialog.findViewById(R.id.select_research_people_name)
-        people_rol = dialog.findViewById(R.id.select_research_people_name)
-        people_phonenumber = dialog.findViewById(R.id.select_research_people_name)
-        people_email = dialog.findViewById(R.id.select_research_people_name)
+        people_department = dialog.findViewById(R.id.select_research_people_department)
+        people_rol = dialog.findViewById(R.id.select_research_people_role)
+        people_phonenumber = dialog.findViewById(R.id.select_research_people_phonenumber)
+        people_email = dialog.findViewById(R.id.select_research_people_email)
 
         cancelButton.setOnClickListener {
             dialog.dismiss()

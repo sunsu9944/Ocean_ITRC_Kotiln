@@ -1,4 +1,4 @@
-package com.twogudak.ocean_itoc_kotiln.Pager
+package com.twogudak.ocean_itoc_kotiln.UI.Pager
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
