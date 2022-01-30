@@ -43,8 +43,6 @@ class PeopleAdapter(var context: Context, var memberList: MemberDTO,): RecyclerV
             .skipMemoryCache(true)
             .diskCacheStrategy(DiskCacheStrategy.NONE)
             .into(holder.rowImageView)
-
-
     }
 
 

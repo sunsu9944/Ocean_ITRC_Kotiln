@@ -69,11 +69,6 @@ class Research_continue_Adapter(var context:Context,var Research_continue:List<R
         }
     }
 
-
-
-
-
-
     //리사이클뷰의 갯
     override fun getItemCount(): Int {
         return filteredList.size
@@ -113,6 +108,17 @@ class Research_continue_Adapter(var context:Context,var Research_continue:List<R
             val dia = ThesisDialog(context)
             dia.status()
             dia.textTitle?.text = "${Research_continue[adapterPosition].research_name_ko}"
+            dia.text_person?.text = "${Research_continue[adapterPosition].research_manager_ko}"
+            dia.textdate?.text = "${Research_continue[adapterPosition].date_start} ~ ${Research_continue[adapterPosition].date_end}"
+            dia.textbusiness_name?.text = "${Research_continue[adapterPosition].business_name_ko}"
+            dia.textdepartment?.text = "${Research_continue[adapterPosition].department_name_ko}"
+            dia.text_origanization?.text = "${Research_continue[adapterPosition].subjectivity_agency_ko}"
+            dia.text_support?.text = "${Research_continue[adapterPosition].support_agency_ko}"
+            dia.text_participating?.text = "${Research_continue[adapterPosition].participation_agency_ko}"
+            dia.text_search_goal?.text = "${Research_continue[adapterPosition].research_goal_ko}"
+            dia.text_content?.text = "${Research_continue[adapterPosition].research_content_ko}"
+            dia.text_result_examination?.text = "${Research_continue[adapterPosition].expectation_result_ko}"
+
             dia.start()
         }
     }

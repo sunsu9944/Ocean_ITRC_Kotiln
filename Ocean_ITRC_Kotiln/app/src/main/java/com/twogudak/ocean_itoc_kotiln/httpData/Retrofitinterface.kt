@@ -1,9 +1,12 @@
 package com.twogudak.ocean_itoc_kotiln.httpData
 
 import com.twogudak.ocean_itoc_kotiln.httpData.DTOManager.ResearchContinueDTO
+import com.twogudak.ocean_itoc_kotiln.httpData.DTOManager.ResearchResultsDTO
 import com.twogudak.ocean_itoc_kotiln.httpData.Members.MemberDTO
+import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 
 interface Retrofitinterface {
@@ -12,4 +15,8 @@ interface Retrofitinterface {
 
     @GET("/research/android/fields")
     fun getResearchContinue(): retrofit2.Call<List<ResearchContinueDTO>>
+
+    @GET("/research/android/results")
+    fun getField(@Query("classify") querys: String): Call<List<ResearchResultsDTO>>
+
 }

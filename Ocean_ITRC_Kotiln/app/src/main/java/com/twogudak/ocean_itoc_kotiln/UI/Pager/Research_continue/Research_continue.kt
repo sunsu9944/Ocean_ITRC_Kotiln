@@ -85,7 +85,7 @@ class research_continue : Fragment() {
         }
         mainActivity.continue_button_3.setOnClickListener {
             setbackground(3)
-            //진행 완료 연구 필터링
+            //진행 완 연구 필터링
             researchContinueAdapter.filter.filter("2")
 
         }

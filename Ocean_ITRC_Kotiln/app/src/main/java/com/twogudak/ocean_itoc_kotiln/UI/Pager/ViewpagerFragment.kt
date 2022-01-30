@@ -14,6 +14,8 @@ import com.twogudak.ocean_itoc_kotiln.R
 import com.twogudak.ocean_itoc_kotiln.UI.Pager.Main.Main
 import com.twogudak.ocean_itoc_kotiln.UI.Pager.People.research_people
 import com.twogudak.ocean_itoc_kotiln.UI.Pager.Research_continue.research_continue
+import com.twogudak.ocean_itoc_kotiln.UI.Pager.Research_result.research_result
+import com.twogudak.ocean_itoc_kotiln.UI.Pager.Research_result.user_info
 import com.twogudak.ocean_itoc_kotiln.UI.Pager.blackboard.black_board
 import kotlinx.android.synthetic.main.fragment_viewpager.*
 

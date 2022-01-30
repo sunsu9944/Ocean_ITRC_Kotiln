@@ -16,6 +16,16 @@ data class ResearchContinueDTO(
     @SerializedName("research_name_en")
     var research_name_en: String,
 
+    @SerializedName("business_name_ko")
+    var business_name_ko: String,
+    @SerializedName("business_name_en")
+    var business_name_en: String,
+
+    @SerializedName("department_name_ko")
+    var department_name_ko: String,
+    @SerializedName("department_name_en")
+    var department_name_en: String,
+
     @SerializedName("subjectivity_agency_ko")
     var subjectivity_agency_ko: String,
     @SerializedName("subjectivity_agency_en")
