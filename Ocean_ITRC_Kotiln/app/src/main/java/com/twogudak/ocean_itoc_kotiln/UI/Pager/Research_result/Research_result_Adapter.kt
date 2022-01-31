@@ -55,6 +55,10 @@ class Research_result_Adapter(var context: Context, var ResearchResults: List<Re
                 dia.status()
                 dia.title?.text = "${ResearchResults[adapterPosition].title_ko}"
                 dia.category?.text = "${ResearchResults[adapterPosition].classify_ko}"
+                dia.date?.text = "${ResearchResults[adapterPosition].date}"
+                dia.member?.text = "${ResearchResults[adapterPosition].writer_ko}"
+                dia.county?.text = "${ResearchResults[adapterPosition].announe_nation_ko}"
+                dia.media?.text = "${ResearchResults[adapterPosition].media_ko}"
                 dia.start()
 
 
