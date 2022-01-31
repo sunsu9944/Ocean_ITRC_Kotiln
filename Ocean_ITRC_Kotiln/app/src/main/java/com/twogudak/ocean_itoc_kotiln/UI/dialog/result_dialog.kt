@@ -18,6 +18,7 @@ class result_dialog(context : Context) {
     var member : TextView? = null
     var county : TextView? = null
     var media : TextView? = null
+    var category : TextView? = null
 
 
     fun status(){
@@ -31,6 +32,7 @@ class result_dialog(context : Context) {
         member = dialog.findViewById<TextView>(R.id.dialog_result_member)
         county = dialog.findViewById<TextView>(R.id.dialog_result_country)
         media = dialog.findViewById<TextView>(R.id.dialog_result_media)
+        category = dialog.findViewById<TextView>(R.id.dialog_classify)
 
         cancelButton = dialog.findViewById(R.id.dialog_result_delete)
 

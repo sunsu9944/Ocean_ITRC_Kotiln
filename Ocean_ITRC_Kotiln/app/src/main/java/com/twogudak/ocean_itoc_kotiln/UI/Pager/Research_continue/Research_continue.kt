@@ -47,7 +47,7 @@ class research_continue : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-
+        peoplerecycler = mainActivity.findViewById<RecyclerView>(R.id.research_continue_recycelerview)
 
         Research_Viewmodel = ViewModelProvider(this).get(Research_Continue_Viewmodel::class.java)
         Research_Viewmodel.getResearchcontinue().observe(viewLifecycleOwner){
@@ -55,7 +55,7 @@ class research_continue : Fragment() {
             researchContinueAdapter = Research_continue_Adapter(requireContext(), it)
 
 
-            peoplerecycler = mainActivity.findViewById<RecyclerView>(R.id.research_continue_recycelerview)
+
             peoplerecycler.adapter = researchContinueAdapter
             peoplerecycler.layoutManager = LinearLayoutManager(mainActivity)
 

@@ -5,14 +5,16 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.twogudak.ocean_itoc_kotiln.R
 import com.twogudak.ocean_itoc_kotiln.UI.dialog.result_dialog
+import com.twogudak.ocean_itoc_kotiln.httpData.DTOManager.ResearchResultsDTO
 
-class Research_result_Adapter(var context: Context) : RecyclerView.Adapter<Research_result_Adapter.ViewHolderClass>() {
+class Research_result_Adapter(var context: Context, var ResearchResults: List<ResearchResultsDTO>) : RecyclerView.Adapter<Research_result_Adapter.ViewHolderClass>() {
 
         override fun getItemCount(): Int {
-            return 30
+            return ResearchResults.size
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
@@ -21,16 +23,28 @@ class Research_result_Adapter(var context: Context) : RecyclerView.Adapter<Resea
             val holder = ViewHolderClass(itemView)
             itemView.setOnClickListener(holder)
 
+
+
+
             return holder
         }
 
         override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
-
-
+            holder.title.text = "${ResearchResults[position].title_ko}"
+            holder.number.text = "${ResearchResults[position].rrid}"
+            holder.date.text = "${ResearchResults[position].date}"
+            holder.manager.text = "${ResearchResults[position].writer_ko}"
+            holder.maincontent.text = ""
         }
 
 
         inner class ViewHolderClass(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+
+            var title = itemView.findViewById<TextView>(R.id.row_result_title)
+            var number = itemView.findViewById<TextView>(R.id.row_result_number)
+            var date = itemView.findViewById<TextView>(R.id.row_result_date)
+            var manager = itemView.findViewById<TextView>(R.id.row_result_name)
+            var maincontent = itemView.findViewById<TextView>(R.id.row_result_textcontent)
 
 
             override fun onClick(p0: View?) {
@@ -39,7 +53,8 @@ class Research_result_Adapter(var context: Context) : RecyclerView.Adapter<Resea
 
                 val dia = result_dialog(context)
                 dia.status()
-                dia.title?.text = "연구 성에서 클릭 ${adapterPosition}번째 자료"
+                dia.title?.text = "${ResearchResults[adapterPosition].title_ko}"
+                dia.category?.text = "${ResearchResults[adapterPosition].classify_ko}"
                 dia.start()
 
 
@@ -49,4 +64,3 @@ class Research_result_Adapter(var context: Context) : RecyclerView.Adapter<Resea
         }
 
     }
-}

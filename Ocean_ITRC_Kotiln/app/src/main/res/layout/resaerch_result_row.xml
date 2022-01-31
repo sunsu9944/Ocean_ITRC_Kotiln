@@ -58,16 +58,18 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/nanummyeongjoextrabold"
-                            android:layout_gravity="center"
+                            android:layout_gravity="left"
+                            android:layout_weight="1"
+                            android:maxLines="1"
+                            android:minWidth="150dp"
                             android:text="2015-10-01 ~ 2016-03-31"/>
 
                         <TextView
                             android:id="@+id/row_result_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="고학림"
-                            android:gravity="right"
+                            android:text="고학림eeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+                            android:maxWidth="150dp"
                             android:textColor="@color/black"
                             android:layout_marginEnd="10dp"
                             android:fontFamily="@font/nanummyeongjoextrabold"/>

@@ -17,6 +17,6 @@ interface Retrofitinterface {
     fun getResearchContinue(): retrofit2.Call<List<ResearchContinueDTO>>
 
     @GET("/research/android/results")
-    fun getField(@Query("classify") querys: String): Call<List<ResearchResultsDTO>>
+    fun getResearchResults(@Query("classify") querys: String): Call<List<ResearchResultsDTO>>
 
 }
