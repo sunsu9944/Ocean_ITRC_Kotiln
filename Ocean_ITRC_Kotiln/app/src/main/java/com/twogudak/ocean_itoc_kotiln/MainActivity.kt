@@ -45,8 +45,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
         setSupportActionBar(topbar)
         supportActionBar?.setDisplayShowCustomEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
@@ -59,13 +57,7 @@ class MainActivity : AppCompatActivity() {
         //viewPager 불러오기
         transFragment("viewPager")
 
-        getdata()
-
-
     }
-
-
-
 
 
     fun transFragment(name: String){
@@ -138,58 +130,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
-    fun getdata(){
-        thread {
-            val url = URL("http://oceanic-ict.hoseo.ac.kr/members/android/memberALL")
-
-            val conn = url.openConnection() as HttpURLConnection
-            conn.requestMethod = "POST"
-
-            //문자열 데이터를 읽어온다.
-            val isr = InputStreamReader(conn.inputStream,"UTF-8")
-            val br = BufferedReader(isr)
-
-            var str:String? = null
-            val buf = StringBuffer()
-            do {
-                str = br.readLine()
-                if(str != null) {
-                    buf.append(str)
-                }
-            }while(str!=null)
-
-            val data = buf.toString()
-
-            //jsonData 분석하기
-            val root = JSONObject(data)
-            val array = root.optJSONArray("result")
-            for(i in 0 until array.length()){
-                val obj = array.getJSONObject(i)
-                val peoplename = obj.getString("name_ko")
-                val position_ko_row = obj.getString("position_ko")
-                val department_ko_row = obj.getString("department_ko")
-                val phonenumber = obj.getString("phone")
-                val email = obj.getString("email")
-
-
-
-                peope_name.add(peoplename)
-                position_ko.add(position_ko_row)
-                department_ko.add(department_ko_row)
-                phone.add(phonenumber)
-                emailadress.add(email)
-            }
-
-        }
-   }
-
-    val peope_name = arrayListOf<String>()
-    val position_ko = arrayListOf<String>()
-    val department_ko = arrayListOf<String>()
-    val phone = arrayListOf<String>()
-    val emailadress = arrayListOf<String>()
 
     val imgtitle = arrayOf(
         "짧은글자","긴글자가가가가가가가각","긴글자한번더긴가가가가가","짧은글","홀수를맞추",
