@@ -10,8 +10,8 @@ import com.twogudak.ocean_itoc_kotiln.httpData.Members.MemberDTO
 class MemberViewModel(application: Application) : AndroidViewModel(application){
     var memberRepository = MemberRespository()
 
-    fun getMember(): MutableLiveData<MemberDTO> {
-        return memberRepository.getMember()
+    fun getMember(token: String?): MutableLiveData<MemberDTO> {
+        return memberRepository.getMember(token)
     }
 
     fun getMessage(): LiveData<String> {

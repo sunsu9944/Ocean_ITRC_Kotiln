@@ -12,6 +12,11 @@ class LoginViewModel(application: Application): AndroidViewModel(application) {
     fun tryLogin(userId: String, userPass: String): LiveData<userDTO> {
         return loginRepository.userLogin(userId, userPass)
     }
+
+    fun tryLogout(token:String?) : LiveData<userDTO>{
+        return loginRepository.logout(token)
+
+    }
     fun getMessage(): LiveData<String> {
         return loginRepository.message
     }

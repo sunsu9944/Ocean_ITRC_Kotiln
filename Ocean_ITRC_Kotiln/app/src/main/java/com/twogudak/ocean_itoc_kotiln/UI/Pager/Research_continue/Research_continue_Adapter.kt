@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class Research_continue_Adapter(var context:Context,var Research_continue:List<ResearchContinueDTO>): RecyclerView.Adapter<Research_continue_Adapter.ViewHolderClass>(),Filterable {
+class Research_continue_Adapter(var context:Context,var Research_continue:List<ResearchContinueDTO>?): RecyclerView.Adapter<Research_continue_Adapter.ViewHolderClass>(),Filterable {
 
     //필터링 구현
     val unFilteredList = Research_continue // 필터전 데이터
@@ -39,19 +39,23 @@ class Research_continue_Adapter(var context:Context,var Research_continue:List<R
                 }else if(charString == "1"){
                     var filteringList = ArrayList<ResearchContinueDTO>()
 
-                    for (item in unFilteredList) {
-                        //진행중 과제
+                    if (unFilteredList != null) {
+                        for (item in unFilteredList) {
+                            //진행중 과제
                             Log.e("test","1111")
-                        if(currendDate.compareTo(dateFormat.parse(item.date_end))<0) filteringList.add(item)
+                            if(currendDate.compareTo(dateFormat.parse(item.date_end))<0) filteringList.add(item)
+                        }
                     }
                     filteringList
                 } else {
                     var filteringList = ArrayList<ResearchContinueDTO>()
 
-                    for (item in unFilteredList) {
-                        //완료 과제
-                        Log.e("test","2222")
-                        if(currendDate.compareTo(dateFormat.parse(item.date_end))>=0) filteringList.add(item)
+                    if (unFilteredList != null) {
+                        for (item in unFilteredList) {
+                            //완료 과제
+                            Log.e("test","2222")
+                            if(currendDate.compareTo(dateFormat.parse(item.date_end))>=0) filteringList.add(item)
+                        }
                     }
                     filteringList
                 }
@@ -62,7 +66,7 @@ class Research_continue_Adapter(var context:Context,var Research_continue:List<R
             }
 
             override fun publishResults(p0: CharSequence?, p1: FilterResults?) {
-                filteredList = p1?.values as ArrayList<ResearchContinueDTO>
+                filteredList = p1?.values as ArrayList<ResearchContinueDTO>?
 
                     notifyDataSetChanged()
             }
@@ -71,7 +75,11 @@ class Research_continue_Adapter(var context:Context,var Research_continue:List<R
 
     //리사이클뷰의 갯
     override fun getItemCount(): Int {
-        return filteredList.size
+        if (filteredList.isNullOrEmpty()){
+            return 0
+        } else {
+            return filteredList!!.size
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
@@ -85,11 +93,11 @@ class Research_continue_Adapter(var context:Context,var Research_continue:List<R
 
     override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
 
-        holder.research_Continue_title.text = "${filteredList[position].research_name_ko}"
-        holder.research_number.text = "${filteredList[position].rfid}"
-        holder.date.text = "${filteredList[position].date_start} ~ ${filteredList[position].date_end}"
-        holder.content.text = "${filteredList[position].research_content_ko}"
-        holder.name.text = "${filteredList[position].research_manager_ko}"
+        holder.research_Continue_title.text = "${filteredList!![position].research_name_ko}"
+        holder.research_number.text = "${filteredList!![position].rfid}"
+        holder.date.text = "${filteredList!![position].date_start} ~ ${filteredList!![position].date_end}"
+        holder.content.text = "${filteredList!![position].research_content_ko}"
+        holder.name.text = "${filteredList!![position].research_manager_ko}"
     }
 
 
@@ -107,17 +115,17 @@ class Research_continue_Adapter(var context:Context,var Research_continue:List<R
 
             val dia = ThesisDialog(context)
             dia.status()
-            dia.textTitle?.text = "${Research_continue[adapterPosition].research_name_ko}"
-            dia.text_person?.text = "${Research_continue[adapterPosition].research_manager_ko}"
-            dia.textdate?.text = "${Research_continue[adapterPosition].date_start} ~ ${Research_continue[adapterPosition].date_end}"
-            dia.textbusiness_name?.text = "${Research_continue[adapterPosition].business_name_ko}"
-            dia.textdepartment?.text = "${Research_continue[adapterPosition].department_name_ko}"
-            dia.text_origanization?.text = "${Research_continue[adapterPosition].subjectivity_agency_ko}"
-            dia.text_support?.text = "${Research_continue[adapterPosition].support_agency_ko}"
-            dia.text_participating?.text = "${Research_continue[adapterPosition].participation_agency_ko}"
-            dia.text_search_goal?.text = "${Research_continue[adapterPosition].research_goal_ko}"
-            dia.text_content?.text = "${Research_continue[adapterPosition].research_content_ko}"
-            dia.text_result_examination?.text = "${Research_continue[adapterPosition].expectation_result_ko}"
+            dia.textTitle?.text = "${Research_continue!![adapterPosition].research_name_ko}"
+            dia.text_person?.text = "${Research_continue!![adapterPosition].research_manager_ko}"
+            dia.textdate?.text = "${Research_continue!![adapterPosition].date_start} ~ ${Research_continue!![adapterPosition].date_end}"
+            dia.textbusiness_name?.text = "${Research_continue!![adapterPosition].business_name_ko}"
+            dia.textdepartment?.text = "${Research_continue!![adapterPosition].department_name_ko}"
+            dia.text_origanization?.text = "${Research_continue!![adapterPosition].subjectivity_agency_ko}"
+            dia.text_support?.text = "${Research_continue!![adapterPosition].support_agency_ko}"
+            dia.text_participating?.text = "${Research_continue!![adapterPosition].participation_agency_ko}"
+            dia.text_search_goal?.text = "${Research_continue!![adapterPosition].research_goal_ko}"
+            dia.text_content?.text = "${Research_continue!![adapterPosition].research_content_ko}"
+            dia.text_result_examination?.text = "${Research_continue!![adapterPosition].expectation_result_ko}"
 
             dia.start()
         }

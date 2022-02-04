@@ -16,6 +16,7 @@ import com.twogudak.ocean_itoc_kotiln.MainActivity
 import com.twogudak.ocean_itoc_kotiln.R
 import com.twogudak.ocean_itoc_kotiln.UI.dialog.ThesisDialog
 import com.twogudak.ocean_itoc_kotiln.UI.dialog.result_dialog
+import com.twogudak.ocean_itoc_kotiln.httpData.DTOManager.ResearchResultsDTO
 import kotlinx.android.synthetic.main.fragment_research_result.*
 
 
@@ -50,6 +51,9 @@ class research_result : Fragment() {
         Research_result_Viewmodel = ViewModelProvider(this).get(com.twogudak.ocean_itoc_kotiln.UI.Pager.Research_result.Research_result_Viewmodel::class.java)
 
         peoplerecycler = mainActivity.findViewById<RecyclerView>(R.id.research_result_recycelerview)
+        val init: List<ResearchResultsDTO>? = null
+
+        researchResultAdapter = Research_result_Adapter(requireContext(),init)
 
         Research_result_Viewmodel.getResearchcontinue("특허").observe(viewLifecycleOwner){
             researchResultAdapter = Research_result_Adapter(requireContext(),it)

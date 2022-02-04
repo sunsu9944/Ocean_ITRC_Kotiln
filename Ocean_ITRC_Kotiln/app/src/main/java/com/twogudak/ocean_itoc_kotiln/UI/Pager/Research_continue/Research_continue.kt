@@ -18,6 +18,7 @@ import com.twogudak.ocean_itoc_kotiln.R
 import com.twogudak.ocean_itoc_kotiln.UI.Pager.People.MemberViewModel
 import com.twogudak.ocean_itoc_kotiln.UI.Pager.People.PeopleAdapter
 import com.twogudak.ocean_itoc_kotiln.UI.dialog.ThesisDialog
+import com.twogudak.ocean_itoc_kotiln.httpData.DTOManager.ResearchContinueDTO
 import kotlinx.android.synthetic.main.fragment_research_continue.*
 
 class research_continue : Fragment() {
@@ -50,6 +51,10 @@ class research_continue : Fragment() {
         peoplerecycler = mainActivity.findViewById<RecyclerView>(R.id.research_continue_recycelerview)
 
         Research_Viewmodel = ViewModelProvider(this).get(Research_Continue_Viewmodel::class.java)
+
+        val nulldata :List<ResearchContinueDTO>? = null
+
+        researchContinueAdapter = Research_continue_Adapter(requireContext(), nulldata)
         Research_Viewmodel.getResearchcontinue().observe(viewLifecycleOwner){
 
             researchContinueAdapter = Research_continue_Adapter(requireContext(), it)

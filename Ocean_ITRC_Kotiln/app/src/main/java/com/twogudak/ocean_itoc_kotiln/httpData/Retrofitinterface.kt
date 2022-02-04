@@ -5,15 +5,12 @@ import com.twogudak.ocean_itoc_kotiln.httpData.DTOManager.ResearchResultsDTO
 import com.twogudak.ocean_itoc_kotiln.httpData.DTOManager.userDTO
 import com.twogudak.ocean_itoc_kotiln.httpData.Members.MemberDTO
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 
 interface Retrofitinterface {
     @POST("/members/android/memberALL")
-    fun getMembers(): retrofit2.Call<MemberDTO>
+    fun getMembers( @Header("user") token: String?): retrofit2.Call<MemberDTO>
 
     @GET("/research/android/fields")
     fun getResearchContinue(): retrofit2.Call<List<ResearchContinueDTO>>
@@ -24,4 +21,6 @@ interface Retrofitinterface {
     @POST("/auth/android/login")
     fun userLogin(@Body loginInfo : HashMap<String, String>):Call<userDTO>
 
+    @GET("/auth/logout")
+    fun logout(@Header("user") token: String?): Call<userDTO>
 }

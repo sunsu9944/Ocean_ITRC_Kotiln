@@ -1,5 +1,6 @@
 package com.twogudak.ocean_itoc_kotiln
 
+import android.content.Context
 import android.graphics.Color
 import android.graphics.ColorSpace
 import android.graphics.drawable.ColorDrawable
@@ -17,26 +18,37 @@ import androidx.core.text.set
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.fragment.app.FragmentStatePagerAdapter
+import com.twogudak.ocean_itoc_kotiln.UI.Pager.Research_result.user_info
 import com.twogudak.ocean_itoc_kotiln.UI.Pager.ViewpagerFragment
+import com.twogudak.ocean_itoc_kotiln.httpData.DOMAIN
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_viewpager.*
 import kotlinx.android.synthetic.main.notice.*
 import kotlinx.android.synthetic.main.research_people.*
 import kotlinx.android.synthetic.main.titlebar.*
+import okhttp3.Cookie
+import okhttp3.HttpUrl
 import org.json.JSONArray
 import org.json.JSONObject
+import retrofit2.http.Url
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
+import java.net.CookieManager
 import java.net.HttpURLConnection
 import java.net.URL
 import kotlin.concurrent.thread
 import kotlin.coroutines.CoroutineContext
 import kotlin.math.log
+import java.net.CookieStore
 
 class MainActivity : AppCompatActivity() {
 
     val frag = ViewpagerFragment()
+    var cookie = Cookie
+
+
+
 
 
 
@@ -56,6 +68,16 @@ class MainActivity : AppCompatActivity() {
 
         //viewPager 불러오기
         transFragment("viewPager")
+
+        UserData(this).getUserInfo()
+
+        if(checkLogin(this)){
+            val token = UserData(this).userinfoData.getString(UserData.TOKEN,"default")
+            Log.e("login","Logined")
+            Log.e("login",token.toString())
+        } else {
+            Log.e("login","notLogin")
+        }
 
     }
 
@@ -83,12 +105,10 @@ class MainActivity : AppCompatActivity() {
         val ActionViewOpen = object : MenuItem.OnActionExpandListener{
 
             override fun onMenuItemActionCollapse(p0: MenuItem?): Boolean {
-                Log.d("test","접혀")
                 return true
             }
 
             override fun onMenuItemActionExpand(p0: MenuItem?): Boolean {
-                Log.d("test","펼쳐")
                 return true
             }
         }
@@ -137,6 +157,15 @@ class MainActivity : AppCompatActivity() {
         "짧은글자","긴글자가가가가가가가각","긴글자한번더긴가가가가가","짧은글","홀수를맞추",
         "짧은글자","긴글자가가가가가가가각","긴글자한번더긴가가가가가","짧은글","홀수를맞추",
     )
+
+
+    fun checkLogin(context: Context):Boolean{
+        if(UserData(this).userinfoData.getString(UserData.USER_ID,"").equals("")){
+            return false
+        } else {
+            return true
+        }
+    }
 
 
 

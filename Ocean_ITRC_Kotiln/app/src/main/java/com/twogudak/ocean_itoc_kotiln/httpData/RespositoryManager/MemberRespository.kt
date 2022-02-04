@@ -10,12 +10,12 @@ class MemberRespository {
 
     val message = MutableLiveData<String>()
 
-    fun getMember(): MutableLiveData<MemberDTO> {
+    fun getMember(token: String?): MutableLiveData<MemberDTO> {
 
         val result = MutableLiveData<MemberDTO>()
         val call = loadRetrofit.OPEN_SERVICE
 
-        call.getMembers().enqueue(object : retrofit2.Callback<MemberDTO> {
+        call.getMembers(token).enqueue(object : retrofit2.Callback<MemberDTO> {
             override fun onResponse(call: Call<MemberDTO>, response: retrofit2.Response<MemberDTO>){
                 result.value = response.body()
             }

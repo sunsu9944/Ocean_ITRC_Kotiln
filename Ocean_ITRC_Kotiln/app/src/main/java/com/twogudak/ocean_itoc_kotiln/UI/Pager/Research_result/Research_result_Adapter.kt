@@ -11,10 +11,14 @@ import com.twogudak.ocean_itoc_kotiln.R
 import com.twogudak.ocean_itoc_kotiln.UI.dialog.result_dialog
 import com.twogudak.ocean_itoc_kotiln.httpData.DTOManager.ResearchResultsDTO
 
-class Research_result_Adapter(var context: Context, var ResearchResults: List<ResearchResultsDTO>) : RecyclerView.Adapter<Research_result_Adapter.ViewHolderClass>() {
+class Research_result_Adapter(var context: Context, var ResearchResults: List<ResearchResultsDTO>?) : RecyclerView.Adapter<Research_result_Adapter.ViewHolderClass>() {
 
         override fun getItemCount(): Int {
-            return ResearchResults.size
+
+            if (ResearchResults.isNullOrEmpty()){
+                return 0
+            }
+            return ResearchResults!!.size
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
@@ -23,17 +27,14 @@ class Research_result_Adapter(var context: Context, var ResearchResults: List<Re
             val holder = ViewHolderClass(itemView)
             itemView.setOnClickListener(holder)
 
-
-
-
             return holder
         }
 
         override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
-            holder.title.text = "${ResearchResults[position].title_ko}"
-            holder.number.text = "${ResearchResults[position].rrid}"
-            holder.date.text = "${ResearchResults[position].date}"
-            holder.manager.text = "${ResearchResults[position].writer_ko}"
+            holder.title.text = "${ResearchResults!![position].title_ko}"
+            holder.number.text = "${ResearchResults!![position].rrid}"
+            holder.date.text = "${ResearchResults!![position].date}"
+            holder.manager.text = "${ResearchResults!![position].writer_ko}"
             holder.maincontent.text = ""
         }
 
@@ -53,12 +54,12 @@ class Research_result_Adapter(var context: Context, var ResearchResults: List<Re
 
                 val dia = result_dialog(context)
                 dia.status()
-                dia.title?.text = "${ResearchResults[adapterPosition].title_ko}"
-                dia.category?.text = "${ResearchResults[adapterPosition].classify_ko}"
-                dia.date?.text = "${ResearchResults[adapterPosition].date}"
-                dia.member?.text = "${ResearchResults[adapterPosition].writer_ko}"
-                dia.county?.text = "${ResearchResults[adapterPosition].announe_nation_ko}"
-                dia.media?.text = "${ResearchResults[adapterPosition].media_ko}"
+                dia.title?.text = "${ResearchResults!![adapterPosition].title_ko}"
+                dia.category?.text = "${ResearchResults!![adapterPosition].classify_ko}"
+                dia.date?.text = "${ResearchResults!![adapterPosition].date}"
+                dia.member?.text = "${ResearchResults!![adapterPosition].writer_ko}"
+                dia.county?.text = "${ResearchResults!![adapterPosition].announe_nation_ko}"
+                dia.media?.text = "${ResearchResults!![adapterPosition].media_ko}"
                 dia.start()
 
 

@@ -14,13 +14,18 @@ import com.twogudak.ocean_itoc_kotiln.httpData.DOMAIN
 import com.twogudak.ocean_itoc_kotiln.httpData.Members.MemberDTO
 import kotlinx.android.synthetic.main.researchpeople_row.view.*
 
-class PeopleAdapter(var context: Context, var memberList: MemberDTO,): RecyclerView.Adapter<PeopleAdapter.ViewHolderClass>() {
+class PeopleAdapter(var context: Context, var memberList: MemberDTO?,): RecyclerView.Adapter<PeopleAdapter.ViewHolderClass>() {
 
 
 
     override fun getItemCount(): Int {
 
-        return memberList.memberlist.size
+        if(memberList?.memberlist.isNullOrEmpty()){
+            return 0
+        }
+
+
+        return memberList?.memberlist!!.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
@@ -35,9 +40,9 @@ class PeopleAdapter(var context: Context, var memberList: MemberDTO,): RecyclerV
 
     override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
 
-        holder.rowName.text = "${memberList.memberlist[position].name_ko}"
-        holder.rowposition.text = "${memberList.memberlist[position].position_ko}"
-        val imgURL = "${DOMAIN.IMAGE_LOAD_URL}${memberList.memberlist[position].photo}"
+        holder.rowName.text = "${memberList!!.memberlist[position].name_ko}"
+        holder.rowposition.text = "${memberList!!.memberlist[position].position_ko}"
+        val imgURL = "${DOMAIN.IMAGE_LOAD_URL}${memberList!!.memberlist[position].photo}"
         Glide.with(context).load(imgURL)
             .error(Glide.with(context).load(R.drawable.defaultimg))
             .skipMemoryCache(true)
@@ -59,12 +64,12 @@ class PeopleAdapter(var context: Context, var memberList: MemberDTO,): RecyclerV
             val dia = SearchPeople_Dialog(context)
 
             dia.status()
-            dia.changetext(dia.peoplename,"${memberList.memberlist[adapterPosition].name_ko}")
-            dia.changetext(dia.people_rol,"${memberList.memberlist[adapterPosition].position_ko}")
-            dia.changetext(dia.people_department,"${memberList.memberlist[adapterPosition].department_ko}")
-            dia.changetext(dia.people_phonenumber,"${memberList.memberlist[adapterPosition].phone}")
-            dia.changetext(dia.people_email,"${memberList.memberlist[adapterPosition].email}")
-            val imgURL = "${DOMAIN.IMAGE_LOAD_URL}${memberList.memberlist[position].photo}"
+            dia.changetext(dia.peoplename,"${memberList!!.memberlist[adapterPosition].name_ko}")
+            dia.changetext(dia.people_rol,"${memberList!!.memberlist[adapterPosition].position_ko}")
+            dia.changetext(dia.people_department,"${memberList!!.memberlist[adapterPosition].department_ko}")
+            dia.changetext(dia.people_phonenumber,"${memberList!!.memberlist[adapterPosition].phone}")
+            dia.changetext(dia.people_email,"${memberList!!.memberlist[adapterPosition].email}")
+            val imgURL = "${DOMAIN.IMAGE_LOAD_URL}${memberList!!.memberlist[position].photo}"
             Glide.with(context).load(imgURL)
                 .error(Glide.with(context).load(R.drawable.defaultimg))
                 .skipMemoryCache(true)
