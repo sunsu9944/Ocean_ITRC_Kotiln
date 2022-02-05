@@ -1,5 +1,6 @@
 package com.twogudak.ocean_itoc_kotiln.UI.Pager.Research_result
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +9,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import com.twogudak.ocean_itoc_kotiln.MainActivity
@@ -36,7 +41,6 @@ class user_info : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         var view = inflater.inflate(R.layout.fragment_user_info, container, false)
 
         // Inflate the layout for this fragment
@@ -48,6 +52,9 @@ class user_info : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+
 
         var to_login_button = view.findViewById<Button>(R.id.to_login_button)
         loginviewmodel = ViewModelProvider(this).get(LoginViewModel::class.java)
@@ -61,30 +68,62 @@ class user_info : Fragment() {
             loginviewmodel.tryLogout(UserData(mainActivity).userinfoData.getString(UserData.TOKEN,"")).observe(viewLifecycleOwner){
 
             }
+
+            Toast.makeText(mainActivity,"로그아웃되었습니다.",Toast.LENGTH_SHORT).show()
+
             UserData(mainActivity).removeUserInfo()
+            to_login_button.isVisible = true
+            logout_button.isVisible = false
+            userinfo_layout.isVisible = false
         }
     }
 
     override fun onResume() {
         super.onResume()
+        var userData = UserData(mainActivity).userinfoData
 
-        var to_login_button = view?.findViewById<Button>(R.id.to_login_button)
+        var to_login_button =mainActivity.findViewById<Button>(R.id.to_login_button)
+        var logout_button = mainActivity.findViewById<Button>(R.id.logout_button)
+        var userinfo = mainActivity.findViewById<LinearLayout>(R.id.userinfo_layout)
+
         if(mainActivity.checkLogin(mainActivity)){
-            to_login_button?.isVisible = false
+            //로그인이 되어있을
+            to_login_button.isVisible = false
+            logout_button.isVisible = true
+            userinfo.isVisible = true
+
+            userinfo_username.text = userData.getString(UserData.USER_NAME,"")
+            userinfo_userID.text = userData.getString(UserData.USER_ID,"")
+            userinfo_userEmail.text = userData.getString(UserData.USER_EMAIL,"")
+            userinfo_userBelong.text = userData.getString(UserData.USER_BELONG,"")
+            userinfo_userDepartment.text = userData.getString(UserData.USER_DEPARTMENT,"")
+            userinfo_userAddress.text = userData.getString(UserData.USER_ADD,"")
+            userinfo_userPhone.text = userData.getString(UserData.USER_PHONE,"")
+
+
         } else {
-            to_login_button?.isVisible = true
+            //로그인이 안되어있을
+            to_login_button.isVisible = true
+            logout_button.isVisible = false
+            userinfo.isVisible = false
         }
-
-        var logout_button = view?.findViewById<Button>(R.id.logout_button)
-        if(mainActivity.checkLogin(mainActivity)){
-            logout_button?.isVisible = true
-        } else {
-            login_button?.isVisible = false
-        }
-
-
-
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

@@ -1,8 +1,6 @@
 package com.twogudak.ocean_itoc_kotiln.httpData
 
-import com.twogudak.ocean_itoc_kotiln.httpData.DTOManager.ResearchContinueDTO
-import com.twogudak.ocean_itoc_kotiln.httpData.DTOManager.ResearchResultsDTO
-import com.twogudak.ocean_itoc_kotiln.httpData.DTOManager.userDTO
+import com.twogudak.ocean_itoc_kotiln.httpData.DTOManager.*
 import com.twogudak.ocean_itoc_kotiln.httpData.Members.MemberDTO
 import retrofit2.Call
 import retrofit2.http.*
@@ -23,4 +21,11 @@ interface Retrofitinterface {
 
     @GET("/auth/logout")
     fun logout(@Header("user") token: String?): Call<userDTO>
+
+    @GET("/app")
+    fun main(@Header("user") token: String?): Call<mainDTO>
+
+    @GET("/gallery/app")
+    fun getgallery(@Header("user") token: String?): Call<GalleryDTO>
+
 }

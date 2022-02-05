@@ -40,7 +40,7 @@ class research_people : Fragment() {
         val View =  inflater.inflate(R.layout.fragment_research_people, container, false)
 
         val nulldata :MemberDTO? = null
-        var memberAdapter = PeopleAdapter(requireContext(),nulldata)
+        memberAdapter = PeopleAdapter(requireContext(),nulldata)
 
 
         //memberViewmodel

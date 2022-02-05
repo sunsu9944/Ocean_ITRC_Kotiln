@@ -1,8 +1,11 @@
 package com.twogudak.ocean_itoc_kotiln.UI.Login
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.twogudak.ocean_itoc_kotiln.R
@@ -23,23 +26,60 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        login_button.setOnClickListener {
-            loginviewmodel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        val ActivityManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager?
 
-            loginviewmodel.tryLogin(ID_textfield.text.toString(),PassWord_textfield.text.toString()).observe(this){
-                Log.e("login","${it}")
-                if(UserData(this).setuserinfo(it)){
-                    finish()
-                }
-
-            }
-
-            loginviewmodel.getMessage().observe(this){
-                Log.e("test","message")
-                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
-            }
+        login_layout.setOnClickListener {
+            ActivityManager?.hideSoftInputFromWindow(it.windowToken,0)
         }
 
+
+
+        PassWord_textfield.setOnKeyListener { view, i, keyEvent ->
+            if(i == KeyEvent.KEYCODE_ENTER){
+
+
+                ActivityManager?.hideSoftInputFromWindow(view.windowToken,0)
+                loginAction()
+
+                true
+            }
+            false
+        }
+        
+        
+
+        login_button.setOnClickListener {
+            loginAction()
+        }
+
+    }
+
+    fun loginAction(){
+        loginviewmodel = ViewModelProvider(this).get(LoginViewModel::class.java)
+
+        loginviewmodel.tryLogin(ID_textfield.text.toString(),PassWord_textfield.text.toString()).observe(this){
+            Log.e("login","${it}")
+            login_button.setOnClickListener {  }
+            if(UserData(this).setuserinfo(it)){
+                if(it.message == "정상적으로 로그인 되었습니다."){
+                    finish()
+                }else {
+                    login_button.setOnClickListener {
+                        loginAction()
+                    }
+                    Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+
+        }
+
+        loginviewmodel.getMessage().observe(this){
+            Log.e("test","message")
+            login_button.setOnClickListener {
+                loginAction()
+            }
+            Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+        }
     }
 
 

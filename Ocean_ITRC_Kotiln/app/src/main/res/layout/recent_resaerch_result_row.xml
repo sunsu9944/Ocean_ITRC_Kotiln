@@ -37,7 +37,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        app:layout_constraintWidth_percent="0.45"
+        app:layout_constraintWidth_percent="0.40"
         android:maxLines="2"
         android:text="논문 명입니다. 어느 정도 길어져도 대응이 가능하게 설계 되었 습니다."
         android:textColor="@color/black"

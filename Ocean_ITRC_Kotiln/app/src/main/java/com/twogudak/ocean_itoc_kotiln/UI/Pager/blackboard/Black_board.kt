@@ -14,6 +14,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.twogudak.ocean_itoc_kotiln.MainActivity
 import com.twogudak.ocean_itoc_kotiln.R
 import com.twogudak.ocean_itoc_kotiln.UI.Pager.PagerFragmentStateAdapter
+import com.twogudak.ocean_itoc_kotiln.UI.Pager.blackboard.Gallery.gallery
 import kotlinx.android.synthetic.main.fragment_black_board.*
 
 class black_board : Fragment() {

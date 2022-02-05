@@ -19,9 +19,6 @@ object loadRetrofit {
 
     }
 
-
-
-
     val OPEN_SERVICE: Retrofitinterface by lazy {
         retrofitClient.build().create(Retrofitinterface::class.java)!!
     }

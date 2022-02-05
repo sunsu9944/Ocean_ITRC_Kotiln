@@ -26,8 +26,8 @@ data class userDTO(
     var userImg: String,
     @SerializedName("Token")
     var Token: String,
-//    @SerializedName("message")
-//    var message: String
+    @SerializedName("message")
+    var message: String
 ): Serializable
 
 
