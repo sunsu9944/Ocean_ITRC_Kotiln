@@ -78,8 +78,8 @@ class user_info : Fragment() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onStart() {
+        super.onStart()
         var userData = UserData(mainActivity).userinfoData
 
         var to_login_button =mainActivity.findViewById<Button>(R.id.to_login_button)
