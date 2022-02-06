@@ -45,7 +45,7 @@ class PeopleAdapter(var context: Context, var memberList: MemberDTO?,): Recycler
         val imgURL = "${DOMAIN.IMAGE_LOAD_URL}${memberList!!.memberlist[position].photo}"
         Glide.with(context).load(imgURL)
             .error(Glide.with(context).load(R.drawable.defaultimg))
-            .skipMemoryCache(true)
+            .skipMemoryCache(false)
             .diskCacheStrategy(DiskCacheStrategy.NONE)
             .into(holder.rowImageView)
     }

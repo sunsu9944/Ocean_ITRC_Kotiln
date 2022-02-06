@@ -4,5 +4,6 @@ class DOMAIN {
     companion object{
         const val DOMAIN = "http://oceanic-ict.hoseo.ac.kr/"
         const val IMAGE_LOAD_URL = "http://oceanic-ict.hoseo.ac.kr/images/members/"
+        const val Gallery_LOAD_URL = "http://oceanic-ict.hoseo.ac.kr/images/gallery/"
     }
 }

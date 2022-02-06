@@ -110,20 +110,4 @@ class user_info : Fragment() {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

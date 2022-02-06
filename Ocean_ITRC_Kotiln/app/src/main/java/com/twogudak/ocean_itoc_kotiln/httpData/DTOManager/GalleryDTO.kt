@@ -4,7 +4,8 @@ import com.google.gson.annotations.SerializedName
 
 data class GalleryDTO(
     @SerializedName("db_data")
-    val db_data : ArrayList<db_data>
+    val db_data : ArrayList<db_data>,
+
 )
 
 
@@ -17,9 +18,6 @@ data class db_data(
     val title_en: String,
     @SerializedName("gDate")
     val gDate: String,
-)
-
-data class img_src(
-    @SerializedName("photos")
-    val photos: ArrayList<String>
+    @SerializedName("img_src")
+    val img_src: String
 )

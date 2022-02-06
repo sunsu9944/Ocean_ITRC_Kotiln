@@ -14,6 +14,7 @@ import com.twogudak.ocean_itoc_kotiln.MainActivity
 import com.twogudak.ocean_itoc_kotiln.R
 import com.twogudak.ocean_itoc_kotiln.UserData
 import com.twogudak.ocean_itoc_kotiln.httpData.DTOManager.GalleryDTO
+import com.twogudak.ocean_itoc_kotiln.httpData.DTOManager.db_data
 import kotlinx.android.synthetic.main.gallery_row.view.*
 
 class gallery : Fragment() {
@@ -23,6 +24,7 @@ class gallery : Fragment() {
     private lateinit var galleryViewModel : GalleryViewModel
     lateinit var galleryAdapter : GalleryAdapter
     lateinit var galleryRecycler : RecyclerView
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -53,8 +55,8 @@ class gallery : Fragment() {
 
         val token =  UserData(mainActivity).userinfoData.getString(UserData.TOKEN,"")
         galleryViewModel.getMain(token).observe(viewLifecycleOwner){
-            galleryAdapter = GalleryAdapter(requireContext(),it)
 
+            galleryAdapter = GalleryAdapter(requireContext(),it)
             galleryRecycler.adapter = galleryAdapter
             galleryRecycler.layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
         }
