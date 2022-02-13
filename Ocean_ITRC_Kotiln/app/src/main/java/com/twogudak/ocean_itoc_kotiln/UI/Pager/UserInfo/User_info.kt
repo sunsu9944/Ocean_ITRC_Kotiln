@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,12 +15,17 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isVisible
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.twogudak.ocean_itoc_kotiln.MainActivity
 import com.twogudak.ocean_itoc_kotiln.R
 import com.twogudak.ocean_itoc_kotiln.UI.Login.LoginActivity
 import com.twogudak.ocean_itoc_kotiln.UI.Login.LoginViewModel
+import com.twogudak.ocean_itoc_kotiln.UI.dialog.checkpw_dialog
 import com.twogudak.ocean_itoc_kotiln.UserData
+import com.twogudak.ocean_itoc_kotiln.httpData.DOMAIN
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.fragment_user_info.*
 
@@ -53,9 +59,6 @@ class user_info : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
-
         var to_login_button = view.findViewById<Button>(R.id.to_login_button)
         loginviewmodel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
@@ -75,6 +78,16 @@ class user_info : Fragment() {
             to_login_button.isVisible = true
             logout_button.isVisible = false
             userinfo_layout.isVisible = false
+            userinfo_button_layout.isVisible = false
+        }
+
+
+        edit_info.setOnClickListener {
+
+            val manager = parentFragmentManager
+
+            Log.e("test","pressbt")
+            checkpw_dialog().show(manager, "tag")
         }
     }
 
@@ -85,12 +98,14 @@ class user_info : Fragment() {
         var to_login_button =mainActivity.findViewById<Button>(R.id.to_login_button)
         var logout_button = mainActivity.findViewById<Button>(R.id.logout_button)
         var userinfo = mainActivity.findViewById<LinearLayout>(R.id.userinfo_layout)
+        var userinfo_layout = mainActivity.findViewById<LinearLayout>(R.id.userinfo_button_layout)
 
         if(mainActivity.checkLogin(mainActivity)){
             //로그인이 되어있을
             to_login_button.isVisible = false
             logout_button.isVisible = true
             userinfo.isVisible = true
+            userinfo_layout.isVisible = true
 
             userinfo_username.text = userData.getString(UserData.USER_NAME,"")
             userinfo_userID.text = userData.getString(UserData.USER_ID,"")
@@ -99,6 +114,14 @@ class user_info : Fragment() {
             userinfo_userDepartment.text = userData.getString(UserData.USER_DEPARTMENT,"")
             userinfo_userAddress.text = userData.getString(UserData.USER_ADD,"")
             userinfo_userPhone.text = userData.getString(UserData.USER_PHONE,"")
+            val imageurl = userData.getString(UserData.USER_IMAGE,"")
+
+            val imgURL = "${DOMAIN.IMAGE_LOAD_URL}${imageurl}"
+            Glide.with(mainActivity).load(imgURL)
+                .error(Glide.with(mainActivity).load(R.drawable.defaultimg))
+                .skipMemoryCache(false)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .into(userinfo_userimage)
 
 
         } else {
@@ -106,6 +129,7 @@ class user_info : Fragment() {
             to_login_button.isVisible = true
             logout_button.isVisible = false
             userinfo.isVisible = false
+            userinfo_layout.isVisible = false
         }
     }
 

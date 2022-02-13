@@ -8,7 +8,6 @@ data class GalleryDTO(
 
 )
 
-
 data class db_data(
     @SerializedName("gid")
     val gid : String,

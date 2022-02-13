@@ -45,13 +45,6 @@ import java.net.CookieStore
 class MainActivity : AppCompatActivity() {
 
     val frag = ViewpagerFragment()
-    var cookie = Cookie
-
-
-
-
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -92,71 +85,64 @@ class MainActivity : AppCompatActivity() {
         tran.commit()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//
+//        menuInflater.inflate(R.menu.titlemenu,menu)
+//
+//        val search = menu?.findItem(R.id.title_search)
+//        val searchbar = search?.actionView as SearchView
+//
+//
+//
+//        //액션뷰가 펼쳐졌을때나 접혀졌을때 구
+//        val ActionViewOpen = object : MenuItem.OnActionExpandListener{
+//
+//            override fun onMenuItemActionCollapse(p0: MenuItem?): Boolean {
+//                return true
+//            }
+//
+//            override fun onMenuItemActionExpand(p0: MenuItem?): Boolean {
+//                return true
+//            }
+//        }
+//
+//        val searching = object : SearchView.OnQueryTextListener{
+//
+//            //텍스트가 바뀌면
+//            override fun onQueryTextChange(newText: String?): Boolean {
+//                return true
+//            }
+//
+//            //누르면
+//            override fun onQueryTextSubmit(query: String?): Boolean {
+//                Log.d("test","검색 구현")
+//                searchbar.clearFocus()
+//
+//                return true
+//            }
+//        }
+//
+//        search.setOnActionExpandListener(ActionViewOpen)
+//        searchbar.setOnQueryTextListener(searching)
+//
+//        return true
+//    }
 
-        menuInflater.inflate(R.menu.titlemenu,menu)
-
-        val search = menu?.findItem(R.id.title_search)
-        val searchbar = search?.actionView as SearchView
-
-
-
-        //액션뷰가 펼쳐졌을때나 접혀졌을때 구
-        val ActionViewOpen = object : MenuItem.OnActionExpandListener{
-
-            override fun onMenuItemActionCollapse(p0: MenuItem?): Boolean {
-                return true
-            }
-
-            override fun onMenuItemActionExpand(p0: MenuItem?): Boolean {
-                return true
-            }
-        }
-
-        val searching = object : SearchView.OnQueryTextListener{
-
-            //텍스트가 바뀌면
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return true
-            }
-
-            //누르면
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                Log.d("test","검색 구현")
-                searchbar.clearFocus()
-
-                return true
-            }
-        }
-
-        search.setOnActionExpandListener(ActionViewOpen)
-        searchbar.setOnQueryTextListener(searching)
-
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        when(item.itemId){
-            R.id.Korean ->{
-                Log.d("test","Korea")
-            }
-            R.id.English -> {
-                Log.d("test","english")
-            }
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//
+//        when(item.itemId){
+//            R.id.Korean ->{
+//                Log.d("test","Korea")
+//            }
+//            R.id.English -> {
+//                Log.d("test","english")
+//            }
+//        }
+//
+//        return super.onOptionsItemSelected(item)
+//    }
 
 
-
-    val imgtitle = arrayOf(
-        "짧은글자","긴글자가가가가가가가각","긴글자한번더긴가가가가가","짧은글","홀수를맞추",
-        "짧은글자","긴글자가가가가가가가각","긴글자한번더긴가가가가가","짧은글","홀수를맞추",
-        "짧은글자","긴글자가가가가가가가각","긴글자한번더긴가가가가가","짧은글","홀수를맞추",
-        "짧은글자","긴글자가가가가가가가각","긴글자한번더긴가가가가가","짧은글","홀수를맞추",
-    )
 
 
     fun checkLogin(context: Context):Boolean{

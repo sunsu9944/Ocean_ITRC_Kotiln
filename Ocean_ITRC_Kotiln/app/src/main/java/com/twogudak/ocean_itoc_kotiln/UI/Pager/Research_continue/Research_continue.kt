@@ -50,6 +50,7 @@ class research_continue : Fragment() {
 
         peoplerecycler = mainActivity.findViewById<RecyclerView>(R.id.research_continue_recycelerview)
 
+
         Research_Viewmodel = ViewModelProvider(this).get(Research_Continue_Viewmodel::class.java)
 
         val nulldata :List<ResearchContinueDTO>? = null
@@ -76,10 +77,8 @@ class research_continue : Fragment() {
         mainActivity.continue_button_1.setOnClickListener {
             Log.e("test","buttonClick")
             setbackground(1)
-
             //전체 필터
             researchContinueAdapter.filter.filter("")
-
 
         }
         mainActivity.continue_button_2.setOnClickListener {

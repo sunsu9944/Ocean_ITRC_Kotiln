@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:text="전체"
             android:textSize="5pt"
-            android:backgroundTint="#273049"
+            android:backgroundTint="#354878"
             android:layout_gravity="center"
             android:fontFamily="@font/nanummyeongjoextrabold"
             />

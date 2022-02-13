@@ -42,13 +42,5 @@
             android:fontFamily="@font/nanummyeongjobold"
             android:textColor="@color/black"
             android:layout_gravity="center"></TextView>
-
-
-
-
     </LinearLayout>
-
-
-
-
 </LinearLayout>

@@ -19,13 +19,22 @@ interface Retrofitinterface {
     @POST("/auth/android/login")
     fun userLogin(@Body loginInfo : HashMap<String, String>):Call<userDTO>
 
+    @POST("/auth/android/revise")
+    fun revise(@Header("user") token: String?, @Body reviseinfo : HashMap<String, String?>):Call<reviseDTO>
+
     @GET("/auth/logout")
     fun logout(@Header("user") token: String?): Call<userDTO>
+
+    @POST("/auth/android/revise_check")
+    fun checkPW(@Header("user") token:String?, @Body PassWard : HashMap<String,String>) : Call<CheckPWDTO>
 
     @GET("/app")
     fun main(@Header("user") token: String?): Call<mainDTO>
 
     @GET("/gallery/app")
     fun getgallery(@Header("user") token: String?): Call<GalleryDTO>
+
+    @GET("board/app-notice")
+    fun getNotice() : Call<NoticeDTO>
 
 }

@@ -4,15 +4,14 @@ import com.google.gson.annotations.SerializedName
 
 data class mainDTO(
 
-    @SerializedName("permission")
-    var permission: permissiondetail,
-
-
     @SerializedName("fields_data")
     var fields_data : ArrayList<fieldDetail>,
 
     @SerializedName("results_data")
-    var results_data : ArrayList<resultDetail>
+    var results_data : ArrayList<resultDetail>,
+
+    @SerializedName("notice_data")
+    var noticedata : ArrayList<noticedata>
 
 )
 
@@ -120,4 +119,10 @@ data class resultDetail(
     var date : String,
     @SerializedName("application_num")
     var application_num : String
+)
+
+
+data class noticedata(
+    @SerializedName("title")
+    var title: String
 )

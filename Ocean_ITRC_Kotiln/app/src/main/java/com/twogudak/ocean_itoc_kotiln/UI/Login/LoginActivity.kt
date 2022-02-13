@@ -33,7 +33,6 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
-
         PassWord_textfield.setOnKeyListener { view, i, keyEvent ->
             if(i == KeyEvent.KEYCODE_ENTER){
 

@@ -15,6 +15,7 @@ import com.twogudak.ocean_itoc_kotiln.MainActivity
 import com.twogudak.ocean_itoc_kotiln.R
 import com.twogudak.ocean_itoc_kotiln.UI.Pager.PagerFragmentStateAdapter
 import com.twogudak.ocean_itoc_kotiln.UI.Pager.blackboard.Gallery.gallery
+import com.twogudak.ocean_itoc_kotiln.UI.Pager.blackboard.Notice.notice
 import kotlinx.android.synthetic.main.fragment_black_board.*
 
 class black_board : Fragment() {
@@ -44,7 +45,6 @@ class black_board : Fragment() {
 
         pagerAdapter.addFragment(notice())
         pagerAdapter.addFragment(gallery())
-        pagerAdapter.addFragment(freetalk())
 
         val blackboard_viewpager = mainActivity.findViewById<ViewPager2>(R.id.blackboard_viewpager)
 
@@ -71,9 +71,6 @@ class black_board : Fragment() {
                     tab.text = "갤러리"
                 }
 
-                2 -> {
-                    tab.text = "자유게시판"
-                }
             }
         }.attach()
 

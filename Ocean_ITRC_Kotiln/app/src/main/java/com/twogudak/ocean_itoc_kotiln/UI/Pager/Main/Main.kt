@@ -129,7 +129,7 @@ class Main : Fragment() {
 
 
             //공지사항
-            notice_content_text.text = "Android-kotlin 첫번째 버전입니다."
+            notice_content_text.text = it.noticedata[0].title
 
 
         }

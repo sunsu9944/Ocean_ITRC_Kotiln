@@ -68,7 +68,7 @@ class ViewpagerFragment : Fragment() {
             tabLayout.setTabTextColors(ColorStateList.valueOf(Color.WHITE))
             when(position){
                 0 -> {
-                    tab.text=tabmainstring
+                    tab.text= tabmainstring
                 }
 
                 1 -> {
@@ -88,7 +88,7 @@ class ViewpagerFragment : Fragment() {
                 }
 
                 5 -> {
-                    tab.text = "사람"
+                    tab.text = "User"
                 }
             }
         }.attach()

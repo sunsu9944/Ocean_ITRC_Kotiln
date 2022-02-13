@@ -30,7 +30,7 @@ class gallery : Fragment() {
         super.onAttach(context)
 
         mainActivity = context as MainActivity
-        imgtitle = mainActivity.imgtitle
+       // imgtitle = mainActivity.imgtitle
 
     }
 

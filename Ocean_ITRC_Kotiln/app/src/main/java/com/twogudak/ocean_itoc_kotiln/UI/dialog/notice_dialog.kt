@@ -6,12 +6,17 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.TextView
 import com.twogudak.ocean_itoc_kotiln.R
 
 class notice_dialog(context: Context) {
 
     val dialog = Dialog(context)
     lateinit var cancelButton : ImageButton
+    lateinit var admin : TextView
+    lateinit var date : TextView
+    lateinit var title : TextView
+    lateinit var content : TextView
 
 
     fun status(){
@@ -21,6 +26,10 @@ class notice_dialog(context: Context) {
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         cancelButton = dialog.findViewById(R.id.dialog_notice_cancelbt)
+        admin = dialog.findViewById(R.id.dialog_notice_person)
+        date = dialog.findViewById(R.id.dialog_notice_date)
+        title = dialog.findViewById(R.id.dialog_notice_title)
+        content = dialog.findViewById(R.id.dialog_notice_content)
 
         cancelButton.setOnClickListener {
             dialog.dismiss()

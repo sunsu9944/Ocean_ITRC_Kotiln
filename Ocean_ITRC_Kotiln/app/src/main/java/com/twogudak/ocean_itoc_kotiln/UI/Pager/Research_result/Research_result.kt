@@ -97,47 +97,6 @@ class research_result : Fragment() {
     }
 
 
-//    inner class research_Recycler_adapter: RecyclerView.Adapter<research_Recycler_adapter.ViewHolderClass>() {
-//
-//        override fun getItemCount(): Int {
-//            return 30
-//        }
-//
-//        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
-//
-//            val itemView = layoutInflater.inflate(R.layout.resaerch_result_row,null)
-//            val holder = ViewHolderClass(itemView)
-//            itemView.setOnClickListener(holder)
-//
-//            return holder
-//        }
-//
-//        override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
-//
-//
-//        }
-//
-//
-//        inner class ViewHolderClass(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-//
-//
-//            override fun onClick(p0: View?) {
-//
-//                Log.d("test","${adapterPosition}")
-//
-//                val dia = result_dialog(mainActivity)
-//                dia.status()
-//                dia.title?.text = "연구 성에서 클릭 ${adapterPosition}번째 자료"
-//                dia.start()
-//
-//
-//            }
-//
-//
-//        }
-//
-//    }
-
     fun setbackground(number : Int){
         when(number){
             1 -> {

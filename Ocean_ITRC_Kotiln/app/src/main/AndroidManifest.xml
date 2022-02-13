@@ -10,8 +10,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Ocean_ITOC_Kotiln"
+        android:theme="@style/Theme.Design.NoActionBar"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".UI.Pager.UserInfo.Edit_info.Edit_userinfo"
+            android:exported="false" />
         <activity
             android:name=".UI.Login.LoginActivity"
             android:exported="false" />

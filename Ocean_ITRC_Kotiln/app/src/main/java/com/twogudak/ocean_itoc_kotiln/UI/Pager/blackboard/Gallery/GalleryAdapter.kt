@@ -57,6 +57,8 @@ class GalleryAdapter(var context: Context,var Gallerydata : GalleryDTO?) : Recyc
             imgnames.add(imgname)
             imgname = ArrayList()
         }
+
+
         Log.e("test",imgnames.toString())
         if(imgnames.size >= Gallerydata!!.db_data.size && !imgnames[position].isEmpty()) {
             val imgURL = "${DOMAIN.Gallery_LOAD_URL}${imgnames[position][0]}"
@@ -86,8 +88,8 @@ class GalleryAdapter(var context: Context,var Gallerydata : GalleryDTO?) : Recyc
             dialog.imgdate.text = Gallerydata!!.db_data[adapterPosition].gDate
 
 
-            if(imgnames.size >= Gallerydata!!.db_data.size && !imgnames[position].isEmpty()) {
-                val imgURL = "${DOMAIN.Gallery_LOAD_URL}${imgnames[position][0]}"
+            if(imgnames.size >= Gallerydata!!.db_data.size && !imgnames[adapterPosition].isEmpty()) {
+                val imgURL = "${DOMAIN.Gallery_LOAD_URL}${imgnames[adapterPosition][0]}"
 
                 Glide.with(context).load(imgURL)
                     .error(Glide.with(context).load(R.drawable.defaultimg))

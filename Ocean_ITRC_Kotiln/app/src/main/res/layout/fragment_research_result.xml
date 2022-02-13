@@ -24,6 +24,7 @@
             android:layout_marginHorizontal="10dp"
             android:layout_weight="1"
             android:textColor="@color/white"
+            android:maxLines="1"
             android:fontFamily="@font/nanummyeongjoextrabold"
             >
         </TextView>
@@ -36,7 +37,7 @@
             android:layout_height="wrap_content"
             android:text="특허"
             android:textSize="5pt"
-            android:backgroundTint="#273049"
+            android:backgroundTint="#354878"
             android:layout_gravity="center"
             android:fontFamily="@font/nanummyeongjoextrabold"
             />
@@ -62,11 +63,12 @@
             android:layout_gravity="center"
             android:fontFamily="@font/nanummyeongjoextrabold"
             />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
 
-        <androidx.legacy.widget.Space
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"/>
+
 
     </LinearLayout>
 
