@@ -59,13 +59,16 @@ class Edit_userinfo : AppCompatActivity() {
             belong = edit_userinfo_Belong.text.toString()
             phone = edit_userinfo_phone.text.toString()
             email = edit_userinfo_email.text.toString()
+            var inputPw = edit_userinfo_input_Pw.text.toString()
+            var checkPw = edit_userinfo_checkPw.text.toString()
+
 
             val loginviewmodel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
 
-            Edit_userinfo_Viewmodel.revise(token,username,position,department,address,belong,phone,email).observe(this){
+            Edit_userinfo_Viewmodel.revise(token,username,position,department,address,belong,phone,email,inputPw,checkPw).observe(this){
 
-                if(it.Message.isNotEmpty()) {
+                if(it.Message == "회원정보 변경이 성공하였습니다.") {
                     loginviewmodel.tryLogout(
                         UserData(this).userinfoData.getString(
                             UserData.TOKEN,
@@ -77,7 +80,9 @@ class Edit_userinfo : AppCompatActivity() {
 
                     Toast.makeText(this, "로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
                     UserData(this).removeUserInfo()
+                    finish()
                 }
+
             }
 
             Edit_userinfo_Viewmodel.getMessage().observe(this){

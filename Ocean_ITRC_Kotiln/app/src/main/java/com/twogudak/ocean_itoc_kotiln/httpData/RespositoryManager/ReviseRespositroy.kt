@@ -12,18 +12,20 @@ class ReviseRespositroy {
 
     fun revise(token: String?, username: String?, position: String?,
                department: String?, address: String?, belong: String?,
-               phone: String?, email: String?): MutableLiveData<reviseDTO> {
+               phone: String?, email: String?,input_Pw: String?, check_Pw: String?): MutableLiveData<reviseDTO> {
 
         val result = MutableLiveData<reviseDTO>()
         val call = loadRetrofit.OPEN_SERVICE
         val reviseinfo = hashMapOf(
-            "userName" to username,
+            "inputName" to username,
             "userEmail" to email,
-            "userBelong" to belong,
-            "userDepartment" to department,
-            "userPosition" to position,
-            "userAdd" to address,
-            "userPhone" to phone
+            "Belong" to belong,
+            "Department" to department,
+            "Position" to position,
+            "inputAdd" to address,
+            "inputPhone" to phone,
+            "inputPw" to input_Pw,
+            "checkPw" to check_Pw
         )
 
         call.revise(token,reviseinfo).enqueue(object : retrofit2.Callback<reviseDTO> {

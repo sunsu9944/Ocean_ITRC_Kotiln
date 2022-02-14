@@ -51,11 +51,12 @@ class checkpw_dialog : DialogFragment() {
 
                 Log.e("test",it.Message)
 
-                if(it.Message == "실패하였습니다."){
+                if(it.Message == "성공하였습니다."){
                     var intent = Intent(mainActivity, Edit_userinfo::class.java)
                     dismiss()
                     startActivity(intent)
-
+                } else {
+                    Toast.makeText(requireContext(),"비밀번호를 확인해 주세요.", Toast.LENGTH_SHORT).show()
                 }
             }
 

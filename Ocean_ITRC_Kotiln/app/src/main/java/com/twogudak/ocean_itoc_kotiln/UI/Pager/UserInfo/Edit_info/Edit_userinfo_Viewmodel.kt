@@ -13,8 +13,8 @@ class Edit_userinfo_Viewmodel(application: Application) : AndroidViewModel(appli
 
     fun revise(token: String?, username: String?, position: String?,
                             department: String?, address: String?, belong: String?,
-                            phone: String?, email: String?): MutableLiveData<reviseDTO> {
-        return reviseRespository.revise(token, username,position,department,address,belong,phone,email)
+                            phone: String?, email: String?,input_Pw: String?, check_Pw: String?): MutableLiveData<reviseDTO> {
+        return reviseRespository.revise(token, username,position,department,address,belong,phone,email,input_Pw,check_Pw)
     }
 
     fun getMessage(): LiveData<String> {

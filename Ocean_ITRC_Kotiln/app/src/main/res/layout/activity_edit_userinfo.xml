@@ -218,6 +218,64 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="비밀번호 변경 : "
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_userinfo_checkPw"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/black"
+                    android:textColor="@color/black"
+                    android:hint="비밀번호는 6자리 이상적어야합니다."
+                    android:inputType="textPassword"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="비밀번호 확인 : "
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_userinfo_input_Pw"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/black"
+                    android:textColor="@color/black"
+                    android:hint="비밀번호는 6자리 이상적어야합니다."
+                    android:inputType="textPassword"/>
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </ScrollView>
